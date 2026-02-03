@@ -1,0 +1,25 @@
+{
+    "admin": {
+        "password": "genius"
+    },
+    "saturday_punter": {
+        "chooser_email": "jlralph@gmail.com",
+        "notification_email": "jlralph@gmail.com",
+        "system_builder_url": "http://equest.optimalsolutions.com.au/",
+        "check_interval_minutes": 2,
+        "max_retries": 3,
+        "system_builder_user": "Hugh",
+        "sender_email": "practicalpuntingautomations@gmail.com",
+        "download_path": "C:\\Users\\Jodie Ralph\\Downloads",
+        "website_url": "https://practicalpunting.com.au//CMSPages/logon.aspx?ReturnUrl=%2fAdmin%2fCMSAdministration.aspx",
+        "website_user": "hugh-manager"
+    },
+    "ppd_club": {
+        "status": "active"
+    },
+    "testing": {
+        "enable_date_override": true,
+        "override_date": "2025-01-31",
+        "product_name_override": "Test Saturday Punter (justtext)"
+    }
+}

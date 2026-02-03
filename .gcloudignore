@@ -1,0 +1,11 @@
+.git
+.gitignore
+__pycache__
+.env
+.tmp
+.bot_debug
+upload_log.txt
+debug_*.html
+*.png
+deploy_wizard.ps1
+deploy_auto.ps1

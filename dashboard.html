@@ -1,0 +1,1616 @@
+<!DOCTYPE html><html style="height: 100%; overflow: hidden;"><head><title>Practical Punting / Dashboard</title><link href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/Default/bootstrap.css" type="text/css" rel="stylesheet"><link href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/Default/bootstrap-additional.css" type="text/css" rel="stylesheet"><link href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/Default/CMSDesk.css" type="text/css" rel="stylesheet"><link href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/Default/DesignMode.css" type="text/css" rel="stylesheet"><meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta charset="utf-8">
+<link href="/CMSPages/GetResource.ashx?stylesheetfile=/CMSScripts/jquery/jquery-jscrollpane.css" type="text/css" rel="stylesheet"> 
+<link href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/Design/UILayout.css" type="text/css" rel="stylesheet"> 
+<link href="/CMSPages/GetResource.ashx?stylesheetfile=/CMSScripts/jquery/jqueryui/jquery-ui.css" type="text/css" rel="stylesheet"> 
+<script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Mole" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Mole.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/BreadcrumbsPin" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/BreadcrumbsPin.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Header" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Header.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Breadcrumbs" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Breadcrumbs.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/ContextHelp" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/ContextHelp.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/UserMenu" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/UserMenu.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/EventHub" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/EventHub.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Application" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Application.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/AppList" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/AppList.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/GlobalEventsHandler" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/GlobalEventsHandler.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/BootstrapTooltip" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/BootstrapTooltip.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Loader" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Loader.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/AdvancedPopupHandler" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/AdvancedPopupHandler.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/DialogContextHelp" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/DialogContextHelp.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Core" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Core.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Context" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Context.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="Underscore" src="/CMSScripts/Underscore/underscore.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="jQuery" src="/CMSScripts/jQuery/jquery-core.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/NavigationBlocker" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/NavigationBlocker.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="jQueryFancySelector" src="/CMSScripts/jquery/jquery-fancyselect.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/UrlHelper" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/UrlHelper.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Filter" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Filter.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="jQueryJScrollPane" src="/CMSScripts/jquery-jscrollpane.js"></script><script type="text/javascript" charset="utf-8" async="" data-cmsrequirecontext="_" data-cmsrequiremodule="CMS/Eventhub" src="/CMSPages/GetResource.ashx?scriptmodule=/CMS/Eventhub.js"></script></head>
+<body id="m_bodyElem" class="Safari Chrome Safari44 Chrome44 ENAU cms-bootstrap ui-layout-container" style="position: relative; height: 100%; overflow: hidden; margin: 0px; padding: 0px; border: none;">
+    <form method="post" action="./CMSAdministration.aspx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="m_manScript_HiddenField" id="m_manScript_HiddenField" value="" style="">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" style="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" style="">
+<input type="hidden" name="__CMSCsrfToken" id="__CMSCsrfToken" value="T6B5Uy1TGTlPp7Cjm1SGaH6yqONa40EpfsBn3r4t9Aj5bvmqfG1IfK3NBt8kSQr3tNiPkwWxdw589KowjfalipNnRhLM2uy27Pn9GLbC/EY=" style="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" style="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTUwNzU1MzE1DxYCHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPFgIeBWNsYXNzBTJTYWZhcmkgQ2hyb21lIFNhZmFyaTQ0IENocm9tZTQ0IEVOQVUgY21zLWJvb3RzdHJhcBYCAgEPZBYCAgcPZBYGZg9kFgRmD2QWAmYPZBYCZg9kFgJmD2QWDgICD2QWAgIBD2QWAmYPZBYCAgEPZBYCZg9kFgICAQ8PDxYEHghIYXNWYWx1ZWceB0hhc0RhdGFnZGQWBAIGDxYCHgdWaXNpYmxlZxYCAgEPFCsAAhAPFgQeDEF1dG9Qb3N0QmFja2ceB1Rvb2xUaXBlFgIeCG9uY2hhbmdlBXZTZXRIYXNoX21fY19sYXlvdXRFbGVtX2hfSGVhZGVyX3NzX3NzKHRoaXMpOyBpZiAoIVVTX0l0ZW1DaGFuZ2VkKHRoaXMsICdtX2NfbGF5b3V0RWxlbV9oX0hlYWRlcl9zc19zcycpKSByZXR1cm4gZmFsc2U7EBUBEVByYWN0aWNhbCBQdW50aW5nFQEBMRQrAwFnFgFmFClcU3lzdGVtLlN0cmluZ1tdLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkBFQIJZGF0YS1oYXNoQDM4ZjkyOTE4MTgyZDIwZjJiN2EyNWE4MjUyYmM3MDUwYWM5NzJmNWZiNThhNzIxM2U4YTcwMTgyOWU2NzFiYjhkAggPZBYCAgMPDxYCHgtTb3J0Q29sdW1uczLMAQABAAAA/////wEAAAAAAAAABAEAAAB/U3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQMAAAAGX2l0ZW1zBV9zaXplCF92ZXJzaW9uBgAACAgJAgAAAAAAAAABAAAAEQIAAAAAAAAAC2QWBgICD2QWBAIBDxYCHwRoZAIDD2QWAmYPD2RkZAIDD2QWAgIDD2QWBAIBDw8WDh4IUGFnZVNpemUCCh4LQ3VycmVudFBhZ2UCAR4IRmFrZU1vZGVnHhREYXRhU291cmNlSXRlbXNDb3VudGYeCVBhZ2VDb3VudGYeCkl0ZW1zQ291bnRmHwRoZGQCAw9kFgICAg8QZBAVBQE1AjEwAjI1AjUwAzEwMBUFATUCMTACMjUCNTADMTAwFCsDBWdnZ2dnFgECAWQCBA9kFgJmD2QWAmYPZBYCAgEPZBYCAgEPZBYCAgMPZBYCAgEPZBYIAgMPEGRkFgBkAgUPZBYCAgMPEGRkFgBkAhUPDxYCHg5TdG9wUHJvY2Vzc2luZ2dkZAIiDxBkZBYAZAIEDxYCHwRnFgJmDw8WAh8EaGRkAgUPZBYCZg9kFgQCAQ9kFgICAQ8PFgQfBmUeBFRleHQFBkhvdyB0b2RkAgIPDxYCHxAFB3Y5LjAuNDVkZAIGD2QWBgIBD2QWBgIBDw8WCB4NT25DbGllbnRDbGljawVHVVNfU2VsZWN0aW9uRGlhbG9nX21fY19sYXlvdXRFbGVtX2hfSGVhZGVyX3VzZXJNZW51X3VzKCk7IHJldHVybiBmYWxzZTsfBmUfEAULSW1wZXJzb25hdGUfBGdkZAICDw9kZBYEAgYPZBYCAgEPFCsAARBkZBYAZAIID2QWAgIDDw8WAh8IMswBAAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAICAkCAAAAAAAAAAEAAAARAgAAAAAAAAALZBYGAgIPZBYEAgEPFgIfBGhkAgMPZBYCZg8PZGRkAgMPZBYCAgMPZBYEAgEPDxYOHwkCCh8KAgEfC2cfDGYfDWYfDmYfBGhkZAIDD2QWAgICDxBkEBUFATUCMTACMjUCNTADMTAwFQUBNQIxMAIyNQI1MAMxMDAUKwMFZ2dnZ2cWAQIBZAIED2QWAmYPZBYCZg9kFgICAQ9kFgICAQ9kFgICAw9kFgICAQ9kFggCAw8QZGQWAGQCBQ9kFgICAw8QZGQWAGQCFQ8PFgIfD2dkZAIiDxBkZBYAZAIEDxYCHwRoZAICD2QWBAIBDw8WCB8RBUdVU19TZWxlY3Rpb25EaWFsb2dfbV9jX2xheW91dEVsZW1faF9IZWFkZXJfdXNlck1lbnVfY3MoKTsgcmV0dXJuIGZhbHNlOx8GZR8QBQ9DaGFuZ2UgbGFuZ3VhZ2UfBGdkZAICDw9kZBYEAgYPZBYCAgEPFCsAARBkZBYAZAIID2QWAgIDDw8WAh8IMswBAAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAICAkCAAAAAAAAAAEAAAARAgAAAAAAAAALZBYGAgIPZBYEAgEPFgIfBGhkAgMPZBYCZg8PZGRkAgMPZBYCAgMPZBYEAgEPDxYOHwkCCh8KAgEfC2cfDGYfDWYfDmYfBGhkZAIDD2QWAgICDxBkEBUFATUCMTACMjUCNTADMTAwFQUBNQIxMAIyNQI1MAMxMDAUKwMFZ2dnZ2cWAQIBZAIED2QWAmYPZBYCZg9kFgICAQ9kFgICAQ9kFgICAw9kFgICAQ9kFggCAw8QZGQWAGQCBQ9kFgICAw8QZGQWAGQCFQ8PFgIfD2dkZAIiDxBkZBYAZAIEDw8WBh8RBRZyZXR1cm4gQ2hlY2tDaGFuZ2VzKCk7HwZlHxAFCFNpZ24gT3V0ZGQCBw8PFgIfBGhkZAIIDw8WAh8EaGRkAgkPDxYCHwRoZGQCAg8PFgIfBGhkZAICDxYCHwRnFgICAQ8PFgYeC05hdmlnYXRlVXJsBQwvP3ZpZXdtb2RlPTAfEAUJTGl2ZSBzaXRlHwYFHk9wZW4gbGl2ZSBzaXRlIGluIGEgbmV3IHdpbmRvd2RkAgQPZBYCAgcPZBYEAgEPZBYQZg8PFgQfBmUfEAVnWW91ciBzY3JlZW4gd2FzIGxvY2tlZCBkdWUgdG8gbG9uZyBwZXJpb2Qgb2YgaW5hY3Rpdml0eS4gUGxlYXNlIGVudGVyIHlvdXIgcGFzc3dvcmQgdG8gdW5sb2NrIGl0IGFnYWluLmRkAgEPDxYEHwZlHxBlZGQCAg8PFgQfBmUfEGVkZAIDDw8WBB8GZR8QBQpVc2VyIG5hbWU6ZGQCBA8PFgQeClNpZ25hdHVyZXMXAB8QBQxodWdoLW1hbmFnZXJkZAIFDw8WBB8GZR8QBQlQYXNzd29yZDpkZAIHDw8WBB8GZR8QBQlQYXNzY29kZTpkZAIJDw8WAh8QBUtZb3VyIGxvZ2luIGF0dGVtcHQgd2FzIG5vdCBzdWNjZXNzZnVsLiBZb3Ugd2VyZSBsb2dnZWQgb3V0IGZyb20gdGhlIHN5c3RlbS5kZAICDw8WAh8QBQhTaWduIE91dGRkGAMFJ20kYyRsYXlvdXRFbGVtJGgkSGVhZGVyJHVzZXJNZW51JGNzJGckdg88KwAMAQhmZAUnbSRjJGxheW91dEVsZW0kaCRIZWFkZXIkdXNlck1lbnUkdXMkZyR2DzwrAAwBCGZkBSFtJGMkbGF5b3V0RWxlbSRoJEhlYWRlciRzcyRzcyRnJHYPPCsADAEIZmQWES91kFFOKeqCMSxMcLCj1RBuNO20oswsQhuNWonG+w==" style="">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=c7bTXCGsRGLs7k1MVsfpSg0nzJIp29iVV5KNq32ov0OtpDSRTLuV2telk5MCRgft0_c3c-ZvQTfsbOXgsxApZPs_f6fXnc_GX5PQ-2rQles1&amp;t=638286425964787378" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+	//<![CDATA[
+function IsCMSDesk() { return true; }
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+
+                        try
+                        {
+                            if (window.top && window.top.HideScreenLockWarningAndSync) {
+                                window.top.HideScreenLockWarningAndSync(1080);
+                            }
+                        }
+                        catch(error)
+                        {
+                            // Do nothing - this error is probably caused by cross-domain access
+                        }
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+
+function CloseDialog(refreshPage) {
+
+    // Check that the document content has not been changed without saving. Stop closing the dialog when user decides to save the content.
+    if (window.CheckChanges && !CheckChanges()) {
+        return false;
+    }
+
+    if (typeof(refreshPage) === "undefined") {
+        refreshPage = true;
+    }
+
+    try {
+        // IE9 fix - wopener doesn't have to be available
+	    if(refreshPage && window.wopener && window.wopener.RefreshWOpener) {
+		    wopener.RefreshWOpener(window);
+	    }
+    }
+    catch(err) {}
+	var canClose = true;
+	if (window.onCloseDialog) {
+		canClose = window.onCloseDialog();
+	}
+	if (canClose) {
+		if(top.closeDialog && (top != window)) {
+			setTimeout(function(){
+                if(top && top.closeDialog && (top != window)){ 
+                    top.closeDialog(window)
+                }
+            }, 1);
+		} 
+		else {
+			top.close(); 
+		}
+	}
+	return false; 
+}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function GetTop(){ if(top.getTop) { return top.getTop(window); } else { return top; } }
+//]]>
+</script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fRequireJS%2frequire.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fRequireJS%2fconfig.js&amp;resolvemacros=1" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function HideMessage(arg, context) {WebForm_DoCallback('m$c$layoutElem$h$Header',arg,ReceiveMessage,"",null,false); }//]]>
+</script>
+
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fcms.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+WebForm_CallbackComplete = WebForm_CallbackComplete_SyncFixed
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+
+if (wopener == null) { 
+	var wopener = window.dialogArguments;
+} 
+if (wopener == null) {
+	wopener = opener;
+}
+if ((wopener == null) && (top != null))
+{ 
+	if(top.getWopener) {
+		wopener  = top.getWopener(window);
+	}
+	else {
+		wopener =  window.top.opener ? window.top.opener : window.top.dialogArguments;
+	}
+}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function userImpersonateShowDialog () {US_SelectionDialog_m_c_layoutElem_h_Header_userMenu_us()}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function modalDialog(url, name, width, height, otherParams, noWopener, forceModal, forceNewWindow, setTitle) {
+    
+    // Header and footer is greater than before, increase window size accordingly
+    if (typeof(height) === "number") {
+        height += 66;
+    }
+
+    // Set default parameter values
+    if (setTitle == undefined) {
+        setTitle = true;
+    }
+    if (forceModal == undefined) {
+        forceModal = true;
+    }
+    if (otherParams == undefined) {
+        otherParams = 'toolbar=no,directories=no,menubar=no,modal=yes,dependent=yes,resizable=yes';
+    }
+
+    var advanced = false;
+    try {
+        advanced = window.top.AdvancedModalDialogs;
+    } catch (err) {
+    }
+
+    if (advanced && !forceNewWindow) {
+        window.top.advancedModal(url, name, width, height, otherParams, noWopener, forceModal, setTitle, this);
+    }
+    else {
+        var dHeight = height;
+        var dWidth = width;
+        if (width.toString().indexOf('%') != -1) {
+            dWidth = Math.round(screen.width * parseInt(width, 10) / 100);
+        }
+        if (height.toString().indexOf('%') != -1) {
+            dHeight = Math.round(screen.height * parseInt(height, 10) / 100);
+        }
+
+        var oWindow = window.open(url, name, 'width=' + dWidth + ',height=' + dHeight + ',' + otherParams);
+        if (oWindow) {
+            oWindow.opener = this;
+            oWindow.focus();
+        }
+    }
+}
+//]]>
+</script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjquery-core.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjquery-dialog.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fBootstrap%2fbootstrap.min.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fBootstrap%2fbootstrap.custom.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjqueryui%2fjquery-ui.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjQueryLayout%2fjquery-layout.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjQueryLayout%2fjquery-layout-callbacks.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fControls%2funiselector.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+function US_SelectionDialog_m_c_layoutElem_h_Header_ss_ss(values) { WebForm_DoCallback('m$c$layoutElem$h$Header$ss$ss',values,US_SelectionDialogReady_m_c_layoutElem_h_Header_ss_ss,'/CMSAdminControls/UI/UniSelector/SelectionDialog.aspx?SelectionMode=SingleDropDownList&hidElem=m_c_layoutElem_h_Header_ss_ss_hiddenField&params=79655233-829f-4f44-9101-ec2cfdd0a34e&clientId=m_c_layoutElem_h_Header_ss_ss&localize=1&hashElem=m_c_layoutElem_h_Header_ss_ss_hdnHash&selectElem=m_c_layoutElem_h_Header_ss_ss_hdnDialogSelect&hash=8157074aa1be161cfc967d28e3cc4702203acae710f8ace834ac9f82e58489d0',null,false); } 
+function US_SelectionChanged_m_c_layoutElem_h_Header_ss_ss() { __doPostBack('m$c$layoutElem$h$Header$ss$ss','selectionchanged'); } 
+
+function US_ReloadPage_m_c_layoutElem_h_Header_ss_ss() { __doPostBack('m$c$layoutElem$h$Header$ss$ss','reload'); return false; }
+function US_RefreshPage_m_c_layoutElem_h_Header_ss_ss() { __doPostBack('m$c$layoutElem$h$Header$ss$ss','refresh'); return false; }
+
+function US_SelectItems_m_c_layoutElem_h_Header_ss_ss(items,hash){  document.getElementById('m_c_layoutElem_h_Header_ss_ss_hiddenField').value = decodeURIComponent(items); document.getElementById('m_c_layoutElem_h_Header_ss_ss_hdnHash').value = hash; __doPostBack('m$c$layoutElem$h$Header$ss$ss','selectitems'); return false; }
+function US_SelectNewValue_m_c_layoutElem_h_Header_ss_ss(selValue){
+    if (window.US_GetNewItemId_m_c_layoutElem_h_Header_ss_ss) {
+        selValue = window.US_GetNewItemId_m_c_layoutElem_h_Header_ss_ss(selValue);
+    }
+    document.getElementById('m_c_layoutElem_h_Header_ss_ss_hiddenSelected').value = selValue;
+    __doPostBack('m$c$layoutElem$h$Header$ss$ss','selectnewvalue');
+    return false;
+}
+
+function HashElem_m_c_layoutElem_h_Header_ss_ss() {
+    return document.getElementById('m_c_layoutElem_h_Header_ss_ss_hdnHash');
+}
+function SetHash_m_c_layoutElem_h_Header_ss_ss(selector) {
+    if (selector != null && selector.selectedIndex >= 0) {
+        var hashElem = HashElem_m_c_layoutElem_h_Header_ss_ss();
+        if (hashElem != null) {
+            hashElem.value = selector.options[selector.selectedIndex].getAttribute('data-hash');
+        }
+    }
+}
+function US_SelectionDialogReady_m_c_layoutElem_h_Header_ss_ss(rvalue, context)
+{
+    modalDialog(context + ((rvalue != '') ? '&selectedvalue=' + rvalue : ''), 'SelectionDialog', 750, 650, null, null, true);
+    return false;
+}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function US_SelectionDialog_m_c_layoutElem_h_Header_userMenu_us(values) { WebForm_DoCallback('m$c$layoutElem$h$Header$userMenu$us',values,US_SelectionDialogReady_m_c_layoutElem_h_Header_userMenu_us,'/CMSAdminControls/UI/UniSelector/SelectionDialog.aspx?SelectionMode=SingleButton&hidElem=m_c_layoutElem_h_Header_userMenu_us_hiddenField&params=153d4f54-8f96-44aa-8ec1-30b32c58c22f&clientId=m_c_layoutElem_h_Header_userMenu_us&localize=1&hashElem=m_c_layoutElem_h_Header_userMenu_us_hdnHash&hash=bebd8555b57990866bed40e3ddcdb6526c377ad686d5bd2b687c17728bc9b30d',null,false); } 
+
+function US_ReloadPage_m_c_layoutElem_h_Header_userMenu_us() { __doPostBack('m$c$layoutElem$h$Header$userMenu$us','reload'); return false; }
+function US_RefreshPage_m_c_layoutElem_h_Header_userMenu_us() { __doPostBack('m$c$layoutElem$h$Header$userMenu$us','refresh'); return false; }
+
+function US_SelectItems_m_c_layoutElem_h_Header_userMenu_us(items,hash){ if (CheckChanges && !CheckChanges()) return false; document.getElementById('m_c_layoutElem_h_Header_userMenu_us_hiddenField').value = decodeURIComponent(items); document.getElementById('m_c_layoutElem_h_Header_userMenu_us_hdnHash').value = hash; __doPostBack('m$c$layoutElem$h$Header$userMenu$us','selectitems'); return false; }
+function US_SelectNewValue_m_c_layoutElem_h_Header_userMenu_us(selValue){
+    if (window.US_GetNewItemId_m_c_layoutElem_h_Header_userMenu_us) {
+        selValue = window.US_GetNewItemId_m_c_layoutElem_h_Header_userMenu_us(selValue);
+    }
+    document.getElementById('m_c_layoutElem_h_Header_userMenu_us_hiddenSelected').value = selValue;
+    __doPostBack('m$c$layoutElem$h$Header$userMenu$us','selectnewvalue');
+    return false;
+}
+
+function HashElem_m_c_layoutElem_h_Header_userMenu_us() {
+    return document.getElementById('m_c_layoutElem_h_Header_userMenu_us_hdnHash');
+}
+function SetHash_m_c_layoutElem_h_Header_userMenu_us(selector) {
+    if (selector != null && selector.selectedIndex >= 0) {
+        var hashElem = HashElem_m_c_layoutElem_h_Header_userMenu_us();
+        if (hashElem != null) {
+            hashElem.value = selector.options[selector.selectedIndex].getAttribute('data-hash');
+        }
+    }
+}
+function US_SelectionDialogReady_m_c_layoutElem_h_Header_userMenu_us(rvalue, context)
+{
+    modalDialog(context + ((rvalue != '') ? '&selectedvalue=' + rvalue : ''), 'SelectionDialog', 750, 650, null, null, true);
+    return false;
+}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function US_SelectionDialog_m_c_layoutElem_h_Header_userMenu_cs(values) { WebForm_DoCallback('m$c$layoutElem$h$Header$userMenu$cs',values,US_SelectionDialogReady_m_c_layoutElem_h_Header_userMenu_cs,'/CMSAdminControls/UI/UniSelector/SelectionDialog.aspx?SelectionMode=SingleButton&hidElem=m_c_layoutElem_h_Header_userMenu_cs_hiddenField&params=ef6d20cc-860b-49c0-b924-acfaf06ab7eb&clientId=m_c_layoutElem_h_Header_userMenu_cs&localize=1&hashElem=m_c_layoutElem_h_Header_userMenu_cs_hdnHash&hash=22d0e59764855b91937dccfa81dcd70311e70682694e7005208d227853a7104a',null,false); } 
+
+function US_ReloadPage_m_c_layoutElem_h_Header_userMenu_cs() { __doPostBack('m$c$layoutElem$h$Header$userMenu$cs','reload'); return false; }
+function US_RefreshPage_m_c_layoutElem_h_Header_userMenu_cs() { __doPostBack('m$c$layoutElem$h$Header$userMenu$cs','refresh'); return false; }
+
+function US_SelectItems_m_c_layoutElem_h_Header_userMenu_cs(items,hash){ if (CheckChanges && !CheckChanges()) return false; document.getElementById('m_c_layoutElem_h_Header_userMenu_cs_hiddenField').value = decodeURIComponent(items); document.getElementById('m_c_layoutElem_h_Header_userMenu_cs_hdnHash').value = hash; __doPostBack('m$c$layoutElem$h$Header$userMenu$cs','selectitems'); return false; }
+function US_SelectNewValue_m_c_layoutElem_h_Header_userMenu_cs(selValue){
+    if (window.US_GetNewItemId_m_c_layoutElem_h_Header_userMenu_cs) {
+        selValue = window.US_GetNewItemId_m_c_layoutElem_h_Header_userMenu_cs(selValue);
+    }
+    document.getElementById('m_c_layoutElem_h_Header_userMenu_cs_hiddenSelected').value = selValue;
+    __doPostBack('m$c$layoutElem$h$Header$userMenu$cs','selectnewvalue');
+    return false;
+}
+
+function HashElem_m_c_layoutElem_h_Header_userMenu_cs() {
+    return document.getElementById('m_c_layoutElem_h_Header_userMenu_cs_hdnHash');
+}
+function SetHash_m_c_layoutElem_h_Header_userMenu_cs(selector) {
+    if (selector != null && selector.selectedIndex >= 0) {
+        var hashElem = HashElem_m_c_layoutElem_h_Header_userMenu_cs();
+        if (hashElem != null) {
+            hashElem.value = selector.options[selector.selectedIndex].getAttribute('data-hash');
+        }
+    }
+}
+function US_SelectionDialogReady_m_c_layoutElem_h_Header_userMenu_cs(rvalue, context)
+{
+    modalDialog(context + ((rvalue != '') ? '&selectedvalue=' + rvalue : ''), 'SelectionDialog', 750, 650, null, null, true);
+    return false;
+}
+//]]>
+</script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fDragAndDrop%2fdragiframe.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSAdminControls%2fUI%2fScreenLock%2fScreenLock.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Cfk1J8ODIMYy4RgzFJBNRcSmWk18o9wwh1Zwdc8sEKm_WzOGaMEacqyHPJRiF5gzPlpjhBj3j2BEpCrx_ArxdAbnNNf2_oFqcSWRbcKL7RjDuOddwQ4-PKF0-psRB0kg0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zI-g5emP4WUDcmDNwFiKLREdnmdoEMNC4w8DChs9iRLWke5mVOfFv0IMbVU5-TJ9R5Xsw4__gdkefLolDhsyBLCkpIG1yx9PlV7HqGaSUKZ49MvfvC8ujuBQtuksGufXmXuxAEWXf6K0PN9YHnGO3A2&amp;t=7c776dc1" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+var CMS = CMS || {};
+CMS.Application = {
+  "isAppList": true,
+  "imagesUrl": "/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f",
+  "isDebuggingEnabled": false,
+  "contexthelp": {
+    "contextHelp": {
+      "application": null,
+      "helpTopics": []
+    },
+    "suppressContextHelp": false
+  },
+  "applicationUrl": "/",
+  "isDialog": false,
+  "isRTL": "false"
+};
+
+//]]>
+</script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="92EC5F6D" style="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAB0DN5iucDFi13thA2KxIs36r5rwp3l5xMvjq45LLzLgCLGl3IE7AAYxxWcsJPjmtNlxngsa9lJh/pfMAu6Yu12yHbtXL146gYdAmfEh+dHuRSq4LIVabJGfXVtMYixOagZ4oEoYCUafRXL7MhG46Qr5KNhugHL9nSUW1WDTsek79mTcu68pK7yZz/YFjB2T3gqzidgUazK4s4j0XCptT1/DqloLKHi9D8Hl6lV5ZU9VHVx8vMLg8oGe3JbgC/+yEbnq5heI+p0/7bXvOCri0Ju8KliUPIm14rijuFhjvsytgNWwcWekBjAfRIbUYTPfsf3Ka5cUDlQxWTEc88LvWCKPXZPSRyu990EZShRID4MTEC/FxxbaYXY1nREKnG+/CGjidjIX5CEvau4M3NCyc6Sn0cUN5ye03VAW5lMIvo5Bqriz5BViVpsBxbP0zIhhe7oXvFfobUy07JSlGbuQt4XCnjEYeVmNptMjhY6WwEUBSio80jr0D7G2dIfOjyDIAisf67NQzRLW+/zpOfRFUclW/t3bH0QKLRjy0Ea0DSflx8D2zX5EWgvL+rL+QKwOvTzcFHNfSg8A6V35sR5CNlzELTbcom+S6k3hZbvVm1Ptb1fhsOnCWm2KI4dRtZZRRBaCq3wFiUlGqAx1Ftzk0xVR" style="">
+</div>
+    
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('m$manScript', 'aspnetForm', ['tm$c$layoutElem$h$pnlUpdate','','tm$c$layoutElem$h$Header$ss$pnlUpdate','','tm$pM$pMP',''], [], [], 90, 'm');
+//]]>
+</script>
+
+    <div id="m_pM_pMP">
+
+</div>
+    
+    <div class="CMSDeskContent">
+        <span id="m_c_layoutElem"><div id="m_c_layoutElem_h" class="main-header main-header-north" style="position: absolute; margin: 0px; inset: 0px 0px auto; width: auto; z-index: 0; height: 48px; display: block; visibility: visible;"><div id="m_c_layoutElem_h_pnlUpdate">
+	
+
+<div class="navbar navbar-inverse cms-navbar">
+    
+        <a href="javascript:void(0)" class="applist-toggle navbar-left" id="cms-applist-toggle" title="Open Application list">
+            <i aria-hidden="true" class="icon-kentico cms-nav-icon-large"></i>
+            <span class="sr-only">Open Application list</span>
+        </a>
+    
+    <h2 class="sr-only">Breadcrumbs</h2>
+    <ul class="navbar-left breadcrumb cms-nav-breadcrumb" id="js-nav-breadcrumb">
+        <li class="no-ico">
+            <a id="m_c_layoutElem_h_Header_lnkDashboard" title="Back to Dashboard" href="#">
+                <i aria-hidden="true" class="icon-home cms-nav-icon-medium"></i> 
+                <span class="sr-only">Back to Dashboard</span>
+            </a>
+        </li>
+        
+            <li class="dropdown no-ico header-site-selector">
+                <div id="m_c_layoutElem_h_Header_ss_pnlSelector" class="site-selector" style="display: block;">
+		
+    <span id="m_c_layoutElem_h_Header_ss_pnlUpdate">
+            <div id="m_c_layoutElem_h_Header_ss_ss">
+
+
+
+
+
+
+    <div class="control-group-inline">
+        <div class="fancy-select"><select name="m$c$layoutElem$h$Header$ss$ss$drpSingleSelect" onchange="SetHash_m_c_layoutElem_h_Header_ss_ss(this); if (!US_ItemChanged(this, 'm_c_layoutElem_h_Header_ss_ss')) return false;setTimeout('__doPostBack(\'m$c$layoutElem$h$Header$ss$ss$drpSingleSelect\',\'\')', 0)" id="m_c_layoutElem_h_Header_ss_ss_drpSingleSelect" class="DropDownField form-control fancified" style="width: 1px; height: 1px; display: block; position: absolute; top: 0px; left: 0px; opacity: 0;">
+			<option selected="selected" value="1" data-hash="38f92918182d20f2b7a25a8252bc7050ac972f5fb58a7213e8a701829e671bb8">Practical Punting</option>
+
+		</select><div class="dropdown">Practical Punting</div><ul class="dropdown-menu"><li data-raw-value="1" class="dropdown-header selected">Practical Punting</li></ul></div>
+    </div>
+
+
+
+
+<input type="hidden" name="m$c$layoutElem$h$Header$ss$ss$hdnDialogSelect" id="m_c_layoutElem_h_Header_ss_ss_hdnDialogSelect" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$ss$ss$hdnIdentifier" id="m_c_layoutElem_h_Header_ss_ss_hdnIdentifier" value="79655233-829f-4f44-9101-ec2cfdd0a34e" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$ss$ss$hiddenField" id="m_c_layoutElem_h_Header_ss_ss_hiddenField" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$ss$ss$hiddenSelected" id="m_c_layoutElem_h_Header_ss_ss_hiddenSelected" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$ss$ss$hdnHash" id="m_c_layoutElem_h_Header_ss_ss_hdnHash" value="38f92918182d20f2b7a25a8252bc7050ac972f5fb58a7213e8a701829e671bb8" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$ss$ss$hdnValue" id="m_c_layoutElem_h_Header_ss_ss_hdnValue" value="1" style=""></div>
+        </span>
+
+	</div>
+
+            </li>
+        
+    <li class="no-ico">Dashboard</li></ul>
+    <ul class="navbar-left breadcrumb cms-nav-breadcrumb">
+        <li class="dashboard-breadcrumb-pin" id="js-single-object-dashboard-pin-list" style="display: none;">
+            <a href="javascript:void(0)">
+                <i id="js-single-object-dashboard-pin-i" aria-hidden="true" class="icon-pin-o cms-icon-50 dashboard-pin icon-disabled" data-action-text-pin="Pin to the application dashboard" data-action-text-unpin="Unpin from the application dashboard"></i>
+                <span class="sr-only">Pin to the application dashboard</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right navbar-inverse">
+        
+        
+        <li>
+            
+<h2 class="sr-only">Help</h2>
+<a class="accordion-toggle collapsed js-context-help" href="#cms-nav-help" data-toggle="collapse" title="Open Help toolbar">
+    <i class="icon-question-circle cms-nav-icon-medium" aria-hidden="true"></i>
+    <span class="sr-only">Open Help toolbar</span>
+</a>
+
+        </li>
+        <li>
+            
+<h2 class="sr-only">User menu</h2>
+<div class="navbar-inverse cms-navbar js-user-menu-wrapper">
+    <ul class="nav navbar-nav navbar-right navbar-inverse">
+        <li>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle" title="Open User menu">
+                <i aria-hidden="true" class="icon-user cms-nav-icon-medium"></i><span class="sr-only">Open User menu</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a class="js-check-changes" href="#e324bfc1-88b8-4376-b471-2f38cd0400ee">
+                        hugh-manager
+                    </a>
+                </li>
+                
+                    <li class="divider"></li>
+                
+                
+                    <li>
+                        <a onclick="US_SelectionDialog_m_c_layoutElem_h_Header_userMenu_us(); return false;" id="m_c_layoutElem_h_Header_userMenu_lnkUsers" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;m$c$layoutElem$h$Header$userMenu$lnkUsers&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Impersonate</a><div id="m_c_layoutElem_h_Header_userMenu_us">
+
+
+
+
+
+
+
+
+
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$us$hdnDialogSelect" id="m_c_layoutElem_h_Header_userMenu_us_hdnDialogSelect" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$us$hdnIdentifier" id="m_c_layoutElem_h_Header_userMenu_us_hdnIdentifier" value="153d4f54-8f96-44aa-8ec1-30b32c58c22f" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$us$hiddenField" id="m_c_layoutElem_h_Header_userMenu_us_hiddenField" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$us$hiddenSelected" id="m_c_layoutElem_h_Header_userMenu_us_hiddenSelected" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$us$hdnHash" id="m_c_layoutElem_h_Header_userMenu_us_hdnHash" value="50af4c6dce47f42823ae81550936e4d750597e22987f912e00fd14d3ac695f98" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$us$hdnValue" id="m_c_layoutElem_h_Header_userMenu_us_hdnValue" style=""></div>
+                    </li>
+                    
+                
+                    <li>
+                        <a onclick="US_SelectionDialog_m_c_layoutElem_h_Header_userMenu_cs(); return false;" id="m_c_layoutElem_h_Header_userMenu_lnkUICultures" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;m$c$layoutElem$h$Header$userMenu$lnkUICultures&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Change language</a><div id="m_c_layoutElem_h_Header_userMenu_cs">
+
+
+
+
+
+
+
+
+
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$cs$hdnDialogSelect" id="m_c_layoutElem_h_Header_userMenu_cs_hdnDialogSelect" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$cs$hdnIdentifier" id="m_c_layoutElem_h_Header_userMenu_cs_hdnIdentifier" value="ef6d20cc-860b-49c0-b924-acfaf06ab7eb" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$cs$hiddenField" id="m_c_layoutElem_h_Header_userMenu_cs_hiddenField" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$cs$hiddenSelected" id="m_c_layoutElem_h_Header_userMenu_cs_hiddenSelected" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$cs$hdnHash" id="m_c_layoutElem_h_Header_userMenu_cs_hdnHash" value="50af4c6dce47f42823ae81550936e4d750597e22987f912e00fd14d3ac695f98" style="">
+<input type="hidden" name="m$c$layoutElem$h$Header$userMenu$cs$hdnValue" id="m_c_layoutElem_h_Header_userMenu_cs_hdnValue" style=""></div>
+                    </li>
+                
+                
+                    <li class="divider"></li>
+                
+                <li>
+                    <a onclick="return CheckChanges();" id="m_c_layoutElem_h_Header_userMenu_lnkSignOut" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;m$c$layoutElem$h$Header$userMenu$lnkSignOut&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Sign Out</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+        </li>
+    </ul>
+</div>
+<div id="cms-header-contexthelp"><div id="m_c_layoutElem_h_Header_contextHelp_pnlToolbar" class="">
+    <div id="cms-nav-help" class="navbar cms-navbar-help panel-collapse collapse no-transition">
+        <ul class="nav navbar-nav navbar-left">
+            <li id="m_c_layoutElem_h_Header_contextHelp_description" style="display: none;"></li>
+            <li id="m_c_layoutElem_h_Header_contextHelp_helpTopics" class="dropdown" style="display: none;">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <span id="m_c_layoutElem_h_Header_contextHelp_lblHowto">How to</span>
+                    <i class="caret" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu"></ul>
+            </li>
+            <li>
+                <a href="http://kentico.com/CMSPages/DocLinkMapper.ashx?version=9.0" target="_blank">Open documentation</a>
+            </li>
+            <li>
+                <a href="http://devnet.kentico.com/questions-answers?utm_campaign=helpbar" target="_blank">Ask the community</a>
+            </li>
+            <li>
+                <a href="http://ideas.kentico.com" target="_blank">Request new feature</a>
+            </li>
+            <li class="navbar-text">
+                <span id="m_c_layoutElem_h_Header_contextHelp_lblVersion">v9.0.45</span>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right navbar-inverse cms-navbar-help">
+            <li id="m_c_layoutElem_h_Header_contextHelp_search" class="nav-search-container">
+                <label class="sr-only" for="cms-navbar-help-search">Search documentation</label>
+                <input id="cms-navbar-help-search" type="search" placeholder="Search documentation" style="">
+                <i class="icon-magnifier" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+</div></div>
+<div id="cms-header-placeholder"></div>
+<div id="cms-header-messages">
+    
+    
+    
+<div id="screenLockWarningDialog" class="message-panel alert-warning screen-lock-warning-dialog" style="display: none;">
+    <div>
+        <div class="screen-lock-warning-cell">
+            <span id="m_c_screenLockDialogElem_lblWarningTextStart">Your screen will be locked in </span>
+            <span id="screenLockTimeDialog">0</span>
+            <span id="m_c_screenLockDialogElem_lblWarningTextEnd"> seconds.</span>
+            <a onclick="CancelScreenLockCountdown(); return false;" id="m_c_screenLockDialogElem_btnCancelCountdown" class="alert-link" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;m$c$screenLockDialogElem$btnCancelCountdown&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Cancel</a>
+        </div>
+    </div>
+</div></div>
+
+</div></div><iframe id="m_c_layoutElem_cmsdesktop" name="cmsdesktop" src="about:blank" frameborder="0" class="ui-layout-pane ui-layout-pane-center" style="position: absolute; margin: 0px; inset: 48px 0px 0px; height: 672px; width: 1280px; z-index: 0; display: block; visibility: visible;">This HTML page contains one or more iframe elements. To view content of these elements, use a web browser that <a href="http://www.browserchoice.eu">supports HTML 4.0 and later</a>.</iframe></span>
+    </div>
+    
+    <div class="applist-panel" id="cms-applist-panel">
+        <h2 class="sr-only">Application list</h2>
+        
+        <div id="cms-applist-header">
+            <a href="javascript:void(0)" class="applist-toggle navbar-left" id="cms-applist-toggle-close" title="Close application list">
+                <i aria-hidden="true" class="icon-chevron-left-circle cms-nav-icon-medium"></i>
+                <span class="sr-only">Close application list</span>
+            </a>
+            <h3 class="applist-header">Applications</h3>
+        </div>
+        
+
+        
+        <div class="nav-search-container">
+            <h3 class="sr-only">Application search</h3>
+            <input id="app_search" autocomplete="off" type="search" class="js-filter-search" placeholder="Search applications…" style="">
+            <label for="app_search" class="sr-only">Search applications…</label>
+            <i aria-hidden="true" class="icon-magnifier"></i>
+        </div>
+        
+
+        
+        <div class="js-scrollable">
+            <div class="panel-group" id="cms-applist">
+                
+                        
+                            <div class="panel panel-default js-filter-parent">
+                                <div class="panel-heading">
+                                    <h3><span class="accordion-toggle" data-toggle="collapse" data-parent="#cms-applist" data-target="#collapse1167">Content management</span></h3>
+                                </div>
+                                <div id="collapse1167" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5c77292d-92cc-4400-829d-66a158205110" data-appguid="5c77292d-92cc-4400-829d-66a158205110" data-original-title="Allows you to manage blogs and blog comments."><i aria-hidden="true" class="icon-app-blogs cms-icon-80 cat-contentmanagementcategory app-blog"></i>Blogs</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#57df65d7-c096-4212-8e7a-4fb3b14733dc" data-appguid="57df65d7-c096-4212-8e7a-4fb3b14733dc" data-original-title="Allows you to manage your checked-out documents and objects, such as CSS Stylesheets or Web part containers."><i aria-hidden="true" class="icon-app-checked-out cms-icon-80 cat-contentmanagementcategory app-checkedoutdocs"></i>Checked-out items</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e56cf9d4-8d83-4480-8146-2ccf5862830e" data-appguid="e56cf9d4-8d83-4480-8146-2ccf5862830e" data-original-title="Allows you to manage the data of existing custom tables. Use the Custom tables application to manage custom tables."><i aria-hidden="true" class="icon-app-custom-tables cms-icon-80 cat-contentmanagementcategory app-customtables"></i>Custom table data</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1c55d3da-a29b-4df6-a0b2-dc72a065a317" data-appguid="1c55d3da-a29b-4df6-a0b2-dc72a065a317" data-original-title="Allows you to create forms for gathering data from your website's visitors. For each form, you can define the fields and layout, set up email notifications and autoresponders, and manage the data submitted by users through the form. Use the Pages application to publish forms on your website."><i aria-hidden="true" class="icon-app-forms cms-icon-80 cat-contentmanagementcategory app-form"></i>Forms</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#436564ee-89e9-4719-939a-0d7b57ece744" data-appguid="436564ee-89e9-4719-939a-0d7b57ece744" data-original-title="Allows you to store and manage large amounts of images and videos. Storing files in the media libraries is more efficient than storing them as documents."><i aria-hidden="true" class="icon-app-media cms-icon-80 cat-contentmanagementcategory app-medialibrary"></i>Media libraries</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#f9a3d08d-41bf-4922-b4a4-0b4110792785" data-appguid="f9a3d08d-41bf-4922-b4a4-0b4110792785" data-original-title="Allows you to manage your blogs and blog comments on your blogs."><i aria-hidden="true" class="icon-app-blogs cms-icon-80 cat-contentmanagementcategory app-myblogs"></i>My blogs</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#6cac111b-174e-4a6c-abdd-5580662c4d45" data-appguid="6cac111b-174e-4a6c-abdd-5580662c4d45" data-original-title="Allows you to view frequently used sources of information and tools in one place. You can customize the widgets available on the dashboard."><i aria-hidden="true" class="icon-app-content-dashboard cms-icon-80 cat-contentmanagementcategory app-mydeskdashboarditem"></i>My desk</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#92aa2df6-bc4a-4759-afb3-07eb82ab2ae6" data-appguid="92aa2df6-bc4a-4759-afb3-07eb82ab2ae6" data-original-title="Allows you to view and edit the pages that you created. "><i aria-hidden="true" class="icon-app-my-documents cms-icon-80 cat-contentmanagementcategory app-mydocuments"></i>My pages</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#a0815e15-d371-446b-8111-d008a8455d4b" data-appguid="a0815e15-d371-446b-8111-d008a8455d4b" data-original-title="Allows you to view pages based on how long they have been in the system."><i aria-hidden="true" class="icon-app-outdated cms-icon-80 cat-contentmanagementcategory app-outdateddocs"></i>Outdated pages</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#95a82f36-9c40-45f0-86f1-39aa44db9a77" data-appguid="95a82f36-9c40-45f0-86f1-39aa44db9a77" data-original-title="Allows you to manage the content and design of the site. Use content tree to navigate to the section of the site that you want to work with."><i aria-hidden="true" class="icon-app-content cms-icon-80 cat-contentmanagementcategory app-content"></i>Pages</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#62a7b8df-19fb-46e0-badf-3ca989339922" data-appguid="62a7b8df-19fb-46e0-badf-3ca989339922" data-original-title="Allows you to view pages that are pending your approval."><i aria-hidden="true" class="icon-app-pending cms-icon-80 cat-contentmanagementcategory app-pending"></i>Pending pages</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#3d90780f-f58b-4275-9ec6-165897095c82" data-appguid="3d90780f-f58b-4275-9ec6-165897095c82" data-original-title="This section displays a list of polls. You can create a new poll or edit or delete existing ones. For each, you can specify its general attributes, answers. You can further manage roles and users who can answer the poll."><i aria-hidden="true" class="icon-app-polls cms-icon-80 cat-contentmanagementcategory app-polls"></i>Polls</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e66c690d-6622-4d9e-897f-bd2431d771ed" data-appguid="e66c690d-6622-4d9e-897f-bd2431d771ed" data-original-title=""><i aria-hidden="true" class="icon-star-full cms-icon-80 cat-contentmanagementcategory app-practicalpunting"></i>Practical Punting</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#35101e65-d12e-4528-9d2c-dd4ccdcc4988" data-appguid="35101e65-d12e-4528-9d2c-dd4ccdcc4988" data-original-title="Allows you to view and edit the pages that you recently modified."><i aria-hidden="true" class="icon-app-recent cms-icon-80 cat-contentmanagementcategory app-recentdocs"></i>Recent pages</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#32238401-6341-4998-a671-c74c7b2a2a03" data-appguid="32238401-6341-4998-a671-c74c7b2a2a03" data-original-title="Allows you to manage the deleted pages and files. You can restore deleted items or destroy them permanently."><i aria-hidden="true" class="icon-app-recycle-bin cms-icon-80 cat-contentmanagementcategory app-administration-recyclebin"></i>Recycle bin</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#2f6b66b8-66fa-41d4-8b16-6409f71f77f8" data-appguid="2f6b66b8-66fa-41d4-8b16-6409f71f77f8" data-original-title="Allows you to manage files stored in SharePoint picture or document libraries.  Libraries are available based on the connections to SharePoint servers that are defined in the SharePoint connections application."><i aria-hidden="true" class="icon-brand-sharepoint cms-icon-80 cat-contentmanagementcategory app-sharepointlibraries"></i>SharePoint</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#cc330171-8ab1-4c48-97c0-f52ea73aea3e" data-appguid="cc330171-8ab1-4c48-97c0-f52ea73aea3e" data-original-title="Allows you to manage and display pages submitted for translation. You can import finished pages into the system, resubmit pages for translation or cancel submissions."><i aria-hidden="true" class="icon-app-translation-services cms-icon-80 cat-contentmanagementcategory app-translations"></i>Translations</a></li>
+                        
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+                        
+                            <div class="panel panel-default js-filter-parent">
+                                <div class="panel-heading">
+                                    <h3><span class="accordion-toggle" data-toggle="collapse" data-parent="#cms-applist" data-target="#collapse2298">On-line marketing</span></h3>
+                                </div>
+                                <div id="collapse2298" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#bbc600ae-e00d-4d82-a548-875800839488" data-appguid="bbc600ae-e00d-4d82-a548-875800839488" data-original-title="Allows you to optimize pages according to visitor reactions. An original page is tested against one or more of its variants and then evaluated based on the gathered data."><i aria-hidden="true" class="icon-app-ab-test cms-icon-80 cat-cmsdesk-onlinemarketing app-abtestlisting"></i>A/B tests</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#d1341d4d-e94d-477b-a8c3-5af3cef52aff" data-appguid="d1341d4d-e94d-477b-a8c3-5af3cef52aff" data-original-title="Allows you to manage banner categories and the banners they contain. To display banners on a page, go to the Pages application and use the Banner rotator web part."><i aria-hidden="true" class="icon-app-banners cms-icon-80 cat-cmsdesk-onlinemarketing app-bannermanagement"></i>Banners</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5ee8ef72-3e95-436c-90ca-702344369b85" data-appguid="5ee8ef72-3e95-436c-90ca-702344369b85" data-original-title="Allows you to manage campaigns and view their results. Use campaigns to monitor the traffic generated by marketing campaigns, such as banners or marketing emails."><i aria-hidden="true" class="icon-app-campaigns cms-icon-80 cat-cmsdesk-onlinemarketing app-campaigns"></i>Campaigns</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1efd63ec-683d-435c-9910-fb2531e3e127" data-appguid="1efd63ec-683d-435c-9910-fb2531e3e127" data-original-title="Allows you to specify marketing segments for the contacts on your site."><i aria-hidden="true" class="icon-app-contact-groups cms-icon-80 cat-cmsdesk-onlinemarketing app-contactgroups"></i>Contact groups</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#c0607faa-40e4-4b41-a27c-cd07def56ea5" data-appguid="c0607faa-40e4-4b41-a27c-cd07def56ea5" data-original-title="Allows you to manage contacts, representing the website’s visitors, and segment them into contact groups and accounts. You can also define the contact activities that your website tracks, or monitor the currently on-line users."><i aria-hidden="true" class="icon-app-contacts cms-icon-80 cat-cmsdesk-onlinemarketing app-contactsframeset"></i>Contact management</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#928c0610-9fc8-4944-b99f-e2e3aa0c6f10" data-appguid="928c0610-9fc8-4944-b99f-e2e3aa0c6f10" data-original-title="Allows you to manage conversions for specific actions on your website and assign them to campaigns. Conversions are integrated into other applications, such as A/B tests or MVT tests."><i aria-hidden="true" class="icon-app-conversions cms-icon-80 cat-cmsdesk-onlinemarketing app-conversions"></i>Conversions</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1623aac1-f3f1-41df-8690-fbfc7d3b9b7a" data-appguid="1623aac1-f3f1-41df-8690-fbfc7d3b9b7a" data-original-title="Allows you to manage the website’s email campaigns, subscribers and email campaign templates. You can track how particular email campaigns are doing or import and export subscribers."><i aria-hidden="true" class="icon-app-newsletters cms-icon-80 cat-cmsdesk-onlinemarketing app-newsletter"></i>Email marketing</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1bfe964c-e4b6-4d87-9f86-d8279019f53a" data-appguid="1bfe964c-e4b6-4d87-9f86-d8279019f53a" data-original-title="Allows you to prepare processes that automatically handle your contacts and perform various marketing actions based on the conditions that you define."><i aria-hidden="true" class="icon-app-processes cms-icon-80 cat-cmsdesk-onlinemarketing app-processesandactions"></i>Marketing automation</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#4a63b3a6-bb69-43e4-9273-39e864ddbbbb" data-appguid="4a63b3a6-bb69-43e4-9273-39e864ddbbbb" data-original-title="Allows you to view frequently used sources of information and tools in one place. You can customize the widgets available on the dashboard. This dashboard is intended as an overview for the system's on-line marketing features."><i aria-hidden="true" class="icon-app-marketing-dashboard cms-icon-80 cat-cmsdesk-onlinemarketing app-omdashboard"></i>Marketing overview</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#eaf9ce44-be29-409b-b2aa-e7b98b1c8ec2" data-appguid="eaf9ce44-be29-409b-b2aa-e7b98b1c8ec2" data-original-title="Allows you to optimize the components, web parts, web part zones and widgets, on particular pages according to the reactions of visitors. Page's original component variants are tested against component variants with different content."><i aria-hidden="true" class="icon-app-mvt cms-icon-80 cat-cmsdesk-onlinemarketing app-mvtestlisting"></i>MVT tests</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e2a077e8-bc48-4315-9d85-affe6161a424" data-appguid="e2a077e8-bc48-4315-9d85-affe6161a424" data-original-title="Allows you to manage the contacts that you are able to move from their current step within any running automation process."><i aria-hidden="true" class="icon-app-contacts cms-icon-80 cat-cmsdesk-onlinemarketing app-mycontacts"></i>My pending contacts</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#2413f5f3-afee-484b-8a83-313710c7a85b" data-appguid="2413f5f3-afee-484b-8a83-313710c7a85b" data-original-title="Allows you to transparently segment your site visitors (contacts) into typical visitor groups. You can then display different content to visitors belonging to different personas."><i aria-hidden="true" class="icon-app-personas cms-icon-80 cat-cmsdesk-onlinemarketing app-personas"></i>Personas</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#4d5e49ee-10e4-446b-81fd-45ed330f1c7d" data-appguid="4d5e49ee-10e4-446b-81fd-45ed330f1c7d" data-original-title="Allows you to create and monitor scores. Use scores to evaluate your site visitors (contacts) based on their attributes and the activities they perform on the site."><i aria-hidden="true" class="icon-app-scoring cms-icon-80 cat-cmsdesk-onlinemarketing app-scoring"></i>Scoring</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1d1c5944-9943-40b8-94b8-a5ab9616e03b" data-appguid="1d1c5944-9943-40b8-94b8-a5ab9616e03b" data-original-title="Allows you to measure and analyze key metrics of your website, such as visits, page views, traffic sources or file downloads."><i aria-hidden="true" class="icon-app-web-analytics cms-icon-80 cat-cmsdesk-onlinemarketing app-cmswebanalytics"></i>Web analytics</a></li>
+                        
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+                        
+                            <div class="panel panel-default js-filter-parent">
+                                <div class="panel-heading">
+                                    <h3><span class="accordion-toggle" data-toggle="collapse" data-parent="#cms-applist" data-target="#collapse2042">E-commerce</span></h3>
+                                </div>
+                                <div id="collapse2042" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#02abe086-269c-4211-a1e8-1c7cd3044fcb" data-appguid="02abe086-269c-4211-a1e8-1c7cd3044fcb" data-original-title="Allows you to increase sales of chosen products. Use this type of discount if you want to trigger some discount (e.g., add a discounted product, reduce price) when customer adds particular products to the shopping cart."><i aria-hidden="true" class="icon-app-order-discounts cms-icon-80 cat-cmsdesk-ecommerce app-buyxgetydiscounts"></i>Buy X Get Y discounts</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#fc547c7d-42e0-4cfd-aebe-c38e5f942f15" data-appguid="fc547c7d-42e0-4cfd-aebe-c38e5f942f15" data-original-title="Allows you to motivate your selected customers to purchase more products. If you use this type of discount, the system offers on the live site either all or only selected products to eligible customers for discounted prices."><i aria-hidden="true" class="icon-app-catalog-discounts cms-icon-80 cat-cmsdesk-ecommerce app-catalogdiscounts"></i>Catalog discounts</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1a4538c9-6a13-4adb-9686-81d4a966f625" data-appguid="1a4538c9-6a13-4adb-9686-81d4a966f625" data-original-title="Allows you to manage your anonymous and registered customers. The registered customers have their personal accounts, and can purchase in your on-line store repeatedly. For all your customers, you can manage their personal details, addresses, orders and email campaigns."><i aria-hidden="true" class="icon-app-customers cms-icon-80 cat-cmsdesk-ecommerce app-customers"></i>Customers</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#7aa8d2f6-2f91-4829-b97d-eb348fac6a4d" data-appguid="7aa8d2f6-2f91-4829-b97d-eb348fac6a4d" data-original-title="Allows you to motivate your selected customers to purchase more products by granting them free shipping. You can configure free shipping offers to apply only if specified conditions are fulfilled."><i aria-hidden="true" class="icon-app-free-shipping-offers cms-icon-80 cat-cmsdesk-ecommerce app-shippingdiscounts"></i>Free shipping offers</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#f3e2e50b-9ea2-4ab8-b43d-46ea47077ccc" data-appguid="f3e2e50b-9ea2-4ab8-b43d-46ea47077ccc" data-original-title="Allows you to manage manufacturers of your products. You can use this information for your internal purposes, and you can also display it on product details pages on the live site in order to provide your customers with more details about the products."><i aria-hidden="true" class="icon-app-manufacturers cms-icon-80 cat-cmsdesk-ecommerce app-manufacturers"></i>Manufacturers</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#eddda429-4de7-4dc4-a38a-20943b4022b8" data-appguid="eddda429-4de7-4dc4-a38a-20943b4022b8" data-original-title="Allows you to configure store preferences (general global settings, global email settings, etc.) and objects (e.g. departments, payment methods, currencies, etc.) that are shared across multiple stores."><i aria-hidden="true" class="icon-app-ecommerce-configuration cms-icon-80 cat-cmsdesk-ecommerce app-tools-ecommerce"></i>Multistore configuration</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#7fe2c4b1-42eb-4602-ab9a-f3997858d562" data-appguid="7fe2c4b1-42eb-4602-ab9a-f3997858d562" data-original-title="Allows you to motivate your selected customers to purchase more products. Use this type of discount if you want to apply a discount on your eligible customers' whole shopping."><i aria-hidden="true" class="icon-app-order-discounts cms-icon-80 cat-cmsdesk-ecommerce app-orderdiscounts"></i>Order discounts</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#b72ad042-31bf-4ff2-8436-25a647bba548" data-appguid="b72ad042-31bf-4ff2-8436-25a647bba548" data-original-title="Allows you to manage orders placed by your customers. You can define multiple shipping options and payment methods, and you can also track order lifecycle through customizable order statuses."><i aria-hidden="true" class="icon-app-orders cms-icon-80 cat-cmsdesk-ecommerce app-orders"></i>Orders</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#d3b7e5b6-6ddd-45a7-a4a3-1d475cf55a9f" data-appguid="d3b7e5b6-6ddd-45a7-a4a3-1d475cf55a9f" data-original-title="Allows you to motivate your customers to purchase more products. Use this type of discount if you want to provide your customers with virtual vouchers that they can exchange for financial discounts when purchasing selected products."><i aria-hidden="true" class="icon-app-product-coupons cms-icon-80 cat-cmsdesk-ecommerce app-discountcoupons"></i>Product coupons</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#3eabff03-3d19-45fc-b40c-9367dd04a13b" data-appguid="3eabff03-3d19-45fc-b40c-9367dd04a13b" data-original-title="Allows you to manage options that you can offer together with selected products, as special additions to selected products, or as components of products that they constitute. You can also offer combinations of multiple product options as product variants."><i aria-hidden="true" class="icon-app-product-options cms-icon-80 cat-cmsdesk-ecommerce app-productoptions"></i>Product options</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5b15dab4-dcbd-4449-a4fe-5dd2a48e08b4" data-appguid="5b15dab4-dcbd-4449-a4fe-5dd2a48e08b4" data-original-title="Allows you to manage products. You can offer the products to your customers separately or with options, i.e. various attributes, additions, etc. You can track product inventory, assign internal and public statuses to the products, and specify product manufacturers and suppliers."><i aria-hidden="true" class="icon-app-products cms-icon-80 cat-cmsdesk-ecommerce app-products"></i>Products</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#9003dcf5-897b-43ce-a3a9-67aa6bc17062" data-appguid="9003dcf5-897b-43ce-a3a9-67aa6bc17062" data-original-title="Allows you to configure settings for the E-commerce Solution (general settings, email settings, etc.). You can also manage selected e-commerce objects (e.g. departments, payment methods, currencies, etc.) using this application."><i aria-hidden="true" class="icon-app-ecommerce-configuration cms-icon-80 cat-cmsdesk-ecommerce app-configuration"></i>Store configuration</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#9722ac0e-4cbc-4eef-a923-1e45b4084e69" data-appguid="9722ac0e-4cbc-4eef-a923-1e45b4084e69" data-original-title="Provides a widget dashboard that you can personalize to contain frequently used sources of information or tools. This dashboard is intended as an overview of the system's e-commerce features."><i aria-hidden="true" class="icon-app-ecommerce-dashboard cms-icon-80 cat-cmsdesk-ecommerce app-ecommercedashboard"></i>Store overview</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5317b48f-b04e-49b0-b336-54d03f4e52b7" data-appguid="5317b48f-b04e-49b0-b336-54d03f4e52b7" data-original-title="Provides interactive reports informing you about your e-business. You can view sales, orders, products, customers and donations statistics."><i aria-hidden="true" class="icon-app-ecommerce-reports cms-icon-80 cat-cmsdesk-ecommerce app-ecreports"></i>Store reports</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#eb547cd0-5fb5-48d7-8c52-7635b202890b" data-appguid="eb547cd0-5fb5-48d7-8c52-7635b202890b" data-original-title="Allows you to manage suppliers of your products. You can specify contact details for each supplier and use this information for internal business purposes."><i aria-hidden="true" class="icon-app-suppliers cms-icon-80 cat-cmsdesk-ecommerce app-suppliers"></i>Suppliers</a></li>
+                        
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+                        
+                            <div class="panel panel-default js-filter-parent">
+                                <div class="panel-heading">
+                                    <h3><span class="accordion-toggle" data-toggle="collapse" data-parent="#cms-applist" data-target="#collapse1168">Social &amp; Community</span></h3>
+                                </div>
+                                <div id="collapse1168" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#ab617598-21c4-4621-9fa1-bcdabf472579" data-appguid="ab617598-21c4-4621-9fa1-bcdabf472579" data-original-title="Displays a list of abuse reports submitted by website users. Each report provides a link to the page where the given report was submitted. You can mark reports as solved or rejected."><i aria-hidden="true" class="icon-app-abuse-reports cms-icon-80 cat-socialandcommunity app-abusereport"></i>Abuse report</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#ac5f7125-ec5e-4ed1-a400-de0676f46189" data-appguid="ac5f7125-ec5e-4ed1-a400-de0676f46189" data-original-title="Allows you to manage the set of avatars available in the system. Avatars are images that represent users on websites. The list includes both avatars prepared by administrators and avatars uploaded by users."><i aria-hidden="true" class="icon-app-avatars cms-icon-80 cat-socialandcommunity app-administration-avatars"></i>Avatars</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5bb05075-4f56-493a-8010-e41b25bc386f" data-appguid="5bb05075-4f56-493a-8010-e41b25bc386f" data-original-title="Allows you to manage the list of words included in the system's language filter. The bad word filter applies to user input on the website, such as forums, messages and comments. You can choose the action that the system takes when bad words are detected."><i aria-hidden="true" class="icon-app-bad-words cms-icon-80 cat-socialandcommunity app-administration-badwords"></i>Bad words</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1a7b69ee-4f31-49d0-a7c4-a73d6e915df2" data-appguid="1a7b69ee-4f31-49d0-a7c4-a73d6e915df2" data-original-title="Allows you to manage badges for website users. You can define badges that the system automatically grants to users based on activity on the website, or assign badges manually through the Users application."><i aria-hidden="true" class="icon-app-badges cms-icon-80 cat-socialandcommunity app-administration-badges"></i>Badges</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#37c959eb-6673-4970-bc65-e76af47943e6" data-appguid="37c959eb-6673-4970-bc65-e76af47943e6" data-original-title="Allows you to configure chat rooms, manage chat nicknames for registered users, and prepare canned responses for support chat."><i aria-hidden="true" class="icon-app-chat cms-icon-80 cat-socialandcommunity app-chat"></i>Chat</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#f0edfdd8-abfa-4c39-816a-5a40008bacf8" data-appguid="f0edfdd8-abfa-4c39-816a-5a40008bacf8" data-original-title="Provides information about events related to the selected website. Events are created through the Pages application as Event (Booking system) pages in the site's content tree. You can manage the attendees registered for events, and send emails to all attendees."><i aria-hidden="true" class="icon-app-events cms-icon-80 cat-socialandcommunity app-eventmanager"></i>Events</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#4920b481-45f5-4d42-8274-72591caf2447" data-appguid="4920b481-45f5-4d42-8274-72591caf2447" data-original-title="Allows you to register Facebook applications and pages in the system, and manually post to your pages. You can also monitor the statistics of your Facebook pages (Insights)."><i aria-hidden="true" class="icon-app-facebook cms-icon-80 cat-socialandcommunity app-facebook"></i>Facebook</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#cd638e2a-6ace-4e0c-85e0-14cc8a4ee1a5" data-appguid="cd638e2a-6ace-4e0c-85e0-14cc8a4ee1a5" data-original-title="Allows you to manage the selected website's forum groups and forums. You can configure forums, set up moderation, manage subscriptions, and edit forum threads and posts. To display forums on the website, add forum web parts onto pages through the Pages application."><i aria-hidden="true" class="icon-app-forums cms-icon-80 cat-socialandcommunity app-forums"></i>Forums</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#066f0a53-4b57-4e09-8cdf-13e366d8e4f0" data-appguid="066f0a53-4b57-4e09-8cdf-13e366d8e4f0" data-original-title="Allows you to add other users within the system as friends and manage friendship requests."><i aria-hidden="true" class="icon-app-friends cms-icon-80 cat-socialandcommunity app-myfriends"></i>Friends</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#33cda0eb-8013-4aed-888d-2dbc199c1906" data-appguid="33cda0eb-8013-4aed-888d-2dbc199c1906" data-original-title="Allows you to manage user groups. Groups are a social networking feature enabling users to find information and communicate according to shared interests."><i aria-hidden="true" class="icon-app-groups cms-icon-80 cat-socialandcommunity app-groups"></i>Groups</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#fa470f87-1ec0-45e7-9cce-934458b8a4a2" data-appguid="fa470f87-1ec0-45e7-9cce-934458b8a4a2" data-original-title="Allows you to register LinkedIn applications and company profiles in the system, and manually post to your company profiles.  You can also monitor analytical data that the system collects for your LinkedIn company profiles."><i aria-hidden="true" class="icon-brand-linkedin cms-icon-80 cat-socialandcommunity app-linkedin"></i>LinkedIn</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#12c1eb41-9b97-4477-9331-620a7fff2ecb" data-appguid="12c1eb41-9b97-4477-9331-620a7fff2ecb" data-original-title="Provides an overview of all messages posted on boards in the system, and allows you to configure the selected website's message boards. You can set up moderation, manage subscriptions, and approve message posts. To display message boards on the site, add message board web parts onto pages through the Pages application."><i aria-hidden="true" class="icon-app-message-boards cms-icon-80 cat-socialandcommunity app-messageboards"></i>Message boards</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#1f92da7d-a05c-42ec-baa9-5c92ca1242dc" data-appguid="1f92da7d-a05c-42ec-baa9-5c92ca1242dc" data-original-title="Allows you to communicate with other users within the system by sending messages. You can write new messages, manage your inbox and previously sent messages, and maintain your contact and ignore list."><i aria-hidden="true" class="icon-app-messages cms-icon-80 cat-socialandcommunity app-mymessages"></i>Messages</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e34cac4d-5b8a-4eed-90bb-0351cefca179" data-appguid="e34cac4d-5b8a-4eed-90bb-0351cefca179" data-original-title="Allows you to register Twitter applications and channels in the system, and manually post tweets. You can also monitor analytical data that the system collects for your Twitter channels."><i aria-hidden="true" class="icon-app-twitter cms-icon-80 cat-socialandcommunity app-twitter"></i>Twitter</a></li>
+                        
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+                        
+                            <div class="panel panel-default js-filter-parent">
+                                <div class="panel-heading">
+                                    <h3><span class="accordion-toggle" data-toggle="collapse" data-parent="#cms-applist" data-target="#collapse2605">Development</span></h3>
+                                </div>
+                                <div id="collapse2605" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#bf7d2d71-326e-421f-8848-8ddd0ff129b4" data-appguid="bf7d2d71-326e-421f-8848-8ddd0ff129b4" data-original-title="This application is obsolete and only provides a link to the API examples documentation."><i aria-hidden="true" class="icon-app-api-examples cms-icon-80 cat-development app-apiexamples"></i>API examples</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#756fe462-7e5e-498c-b0ce-6af7f7b41084" data-appguid="756fe462-7e5e-498c-b0ce-6af7f7b41084" data-original-title="Allows you to create, edit and manage CSS stylesheets. Stylesheets define the appearance and design of pages and their components. Use the Sites and Pages applications to assign stylesheets to sites or individual pages."><i aria-hidden="true" class="icon-app-css-stylesheets cms-icon-80 cat-development app-development-cssstylesheets"></i>CSS stylesheets</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5eddc608-1b8a-4a53-9967-f501e1415d9d" data-appguid="5eddc608-1b8a-4a53-9967-f501e1415d9d" data-original-title="Allows you to manage custom tables and their data. You can create new custom custom tables, define their structure or manage the data they contain. Custom tables are a more efficient way of storing large amounts of structured data than pages."><i aria-hidden="true" class="icon-app-custom-tables cms-icon-80 cat-development app-development-customtables"></i>Custom tables</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#7d5f9348-3718-4c7f-9e3a-0281edb61d7b" data-appguid="7d5f9348-3718-4c7f-9e3a-0281edb61d7b" data-original-title="Provides an overview of the database views and stored procedures used by the system. If necessary, you can customize the code of the database objects."><i aria-hidden="true" class="icon-app-database-objects cms-icon-80 cat-development app-development-systables"></i>Database objects</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#b510ca56-2963-4e39-ba4f-5a13a7457e21" data-appguid="b510ca56-2963-4e39-ba4f-5a13a7457e21" data-original-title="Allows you to define profiles that categorize visitors based on the device they use to access the website. You can create and display alternative page layouts for different device profiles."><i aria-hidden="true" class="icon-app-device-profiles cms-icon-80 cat-development app-development-deviceprofiles"></i>Device profiles</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#c1dff926-1ff4-4900-8f87-1590eb7a850c" data-appguid="c1dff926-1ff4-4900-8f87-1590eb7a850c" data-original-title="Allows you to manage email templates. The templates define the content of automatic emails sent by the system. For example, workflow notifications informing about the status of pages are based on email templates. By default, the system uses global templates, but you can create site-specific versions of each template."><i aria-hidden="true" class="icon-app-email-templates cms-icon-80 cat-development app-administration-emailtemplates"></i>Email templates</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#29937e43-bd20-4fb0-80f5-cddc4dc595c0" data-appguid="29937e43-bd20-4fb0-80f5-cddc4dc595c0" data-original-title="Allows you to register custom form controls and configure existing ones. Form controls define the interface of fields in editing forms. Users select form controls for fields when creating any type of form in the system, for both the administration interface and live site. If you wish to create a completely new form control, you first need to develop a user control with the required functionality."><i aria-hidden="true" class="icon-app-form-controls cms-icon-80 cat-development app-development-formcontrols"></i>Form controls</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5c373307-436f-4d66-b48e-f9d2a075e8d4" data-appguid="5c373307-436f-4d66-b48e-f9d2a075e8d4" data-original-title="Allows you to manage custom JavaScript files through the administration interface, without requiring direct access to the file system."><i aria-hidden="true" class="icon-app-javascript-files cms-icon-80 cat-development app-development-javascript"></i>Javascript files</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#6fc0ed53-4054-4edf-9f01-a415fb7ff791" data-appguid="6fc0ed53-4054-4edf-9f01-a415fb7ff791" data-original-title="Allows you to create global and form validation macro rules. Macro rules are text-based representations of macro conditions that define certain requirements. Users can build conditions out of macro rules without knowledge of the macro syntax."><i aria-hidden="true" class="icon-app-macro-rules cms-icon-80 cat-development app-development-macrorules"></i>Macro rules</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#53657c4c-6b2b-4409-8879-a76f955d7bca" data-appguid="53657c4c-6b2b-4409-8879-a76f955d7bca" data-original-title="Allows developers to find information about the system and perform customizations. The system's functionality is separated into modules. For example, you can use modules to create custom settings, add fields to system objects or extend the administration interface."><i aria-hidden="true" class="icon-app-modules cms-icon-80 cat-development app-modulesnew"></i>Modules</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e9a854e5-8dc5-48b4-8df4-125c4d9cdabc" data-appguid="e9a854e5-8dc5-48b4-8df4-125c4d9cdabc" data-original-title="Allows you to manage notification templates and gateways. Templates define the content of notifications, and gateways determine how the system delivers notifications to users. By default, the system provides email notifications for keeping track of page changes. To allow users to subscribe to recieve notifications, add notification web parts to your pages using the Pages application."><i aria-hidden="true" class="icon-app-notifications cms-icon-80 cat-development app-development-notifications"></i>Notifications</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#51136112-fd59-4d34-9577-81182e9365f5" data-appguid="51136112-fd59-4d34-9577-81182e9365f5" data-original-title="Allows you to manage shared page layouts and edit their code. Layouts define the structure of portal engine page templates. Use the Page templates application to edit the layout of templates that have their own custom layout."><i aria-hidden="true" class="icon-app-page-layouts cms-icon-80 cat-development app-development-pagelayout"></i>Page layouts</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#06a4451b-3356-45c5-8b60-9ed0b2dd7151" data-appguid="06a4451b-3356-45c5-8b60-9ed0b2dd7151" data-original-title="Allows you to manage all page templates in the system. Page templates define the structure and core functionality of web pages. Use the Pages application to create pages based on the templates, and edit the design of templates."><i aria-hidden="true" class="icon-app-page-templates cms-icon-80 cat-development app-development-pagetemplates"></i>Page templates</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#ef328ac1-a3ba-43c1-8b09-ba0e1e7b27ee" data-appguid="ef328ac1-a3ba-43c1-8b09-ba0e1e7b27ee" data-original-title="Allows you to manage page types. You can create new page types or define their structure. You can also specify which page  types can be used in certain sections of the site."><i aria-hidden="true" class="icon-app-document-types cms-icon-80 cat-development app-development-documenttypes"></i>Page types</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#2edbae72-14c0-42f7-a8b4-2bdd4eb67ad3" data-appguid="2edbae72-14c0-42f7-a8b4-2bdd4eb67ad3" data-original-title="Allows you to create containers for web parts. Containers consist of HTML code placed before and after the web part. To assign containers to instances of web parts, open the Pages application, edit pages on the Design tab, configure the web parts and set the Web part container property."><i aria-hidden="true" class="icon-app-web-part-containers cms-icon-80 cat-development app-development-webcontainers"></i>Web part containers</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#77af5783-40e0-4149-98a0-f68bdf1e32a2" data-appguid="77af5783-40e0-4149-98a0-f68bdf1e32a2" data-original-title="Allows you to manage all web parts in the system. Web parts are the basic building blocks of portal engine pages. Each web parts displays web content or performs some type of functionality. Developers can register custom user controls as web parts. Use the Design tab of the Pages application to add web part instances onto page templates."><i aria-hidden="true" class="icon-app-web-parts cms-icon-80 cat-development app-development-webparts"></i>Web parts</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#f95d0795-77d9-4047-ae4e-0b4616ff3b6d" data-appguid="f95d0795-77d9-4047-ae4e-0b4616ff3b6d" data-original-title="Allows you to save existing sites as web templates. You can then use the web templates as starting points for developing new sites."><i aria-hidden="true" class="icon-app-web-templates cms-icon-80 cat-development app-development-webtemplates"></i>Web templates</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#ef314079-8dbb-4273-bed1-a4af14d0cbf7" data-appguid="ef314079-8dbb-4273-bed1-a4af14d0cbf7" data-original-title="Allows you to manage widgets and their categories. Widgets are page components that display content or perform functionality. Every widget is based on an existing web part. You can create new widgets, define their properties, and choose where and how each widget can be used by content editors and end users of websites. By working with widgets, users can build or customize the content of pages."><i aria-hidden="true" class="icon-app-widgets cms-icon-80 cat-development app-development-widgets"></i>Widgets</a></li>
+                        
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+                        
+                            <div class="panel panel-default js-filter-parent">
+                                <div class="panel-heading">
+                                    <h3><span class="accordion-toggle" data-toggle="collapse" data-parent="#cms-applist" data-target="#collapse1197">Configuration</span></h3>
+                                </div>
+                                <div id="collapse1197" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#4987a485-f250-492d-b116-256d57f2c339" data-appguid="4987a485-f250-492d-b116-256d57f2c339" data-original-title=""><i aria-hidden="true" class="icon-app-email-queue cms-icon-80 cat-configuration app-auditemails"></i>Audit emails</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#dd3dbea4-07b5-4905-b090-f7eca0dacdd8" data-appguid="dd3dbea4-07b5-4905-b090-f7eca0dacdd8" data-original-title="Allows you to ban users with specific IP addresses from accessing or using websites. You can ban addresses globally, or separately for individual sites."><i aria-hidden="true" class="icon-app-banned-ips cms-icon-80 cat-configuration app-bannedip"></i>Banned IPs</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#c75fca70-7a6e-43f6-a105-7261a836840d" data-appguid="c75fca70-7a6e-43f6-a105-7261a836840d" data-original-title="Allows you to manage the hierarchy of global and site categories. You can manage personal categories in the My profile application."><i aria-hidden="true" class="icon-app-categories cms-icon-80 cat-configuration app-categories"></i>Categories</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#eb775d9b-37b6-4c3f-a103-f0a1c5c5e9e3" data-appguid="eb775d9b-37b6-4c3f-a103-f0a1c5c5e9e3" data-original-title="Allows developers to serialize the data of objects from the database into XML files on the file system. The files can then be added to a source control system, and used to synchronize database data between developers along with project files."><i aria-hidden="true" class="icon-app-continuous-integration cms-icon-80 cat-configuration app-continuousintegration"></i>Continuous integration</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#0c983cd9-124a-427b-a516-5fd0dc8045e4" data-appguid="0c983cd9-124a-427b-a516-5fd0dc8045e4" data-original-title="Allows you to manage the countries and states used throughout the system. You can add new countires and edit the names and codes of existing ones."><i aria-hidden="true" class="icon-app-countries cms-icon-80 cat-configuration app-development-countries"></i>Countries</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#3abfac77-95b9-4a3b-a0be-3539abca35d8" data-appguid="3abfac77-95b9-4a3b-a0be-3539abca35d8" data-original-title="Allows you to monitor internal activity within the system. You can use the debugging tools to find and fix problems with performance or specific features, and get detailed information when reporting issues to support."><i aria-hidden="true" class="icon-app-debug cms-icon-80 cat-configuration app-debug"></i>Debug</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#9f31e5d0-5bd8-4821-94c3-9d970e477b73" data-appguid="9f31e5d0-5bd8-4821-94c3-9d970e477b73" data-original-title="Allows you to monitor emails that are waiting to be sent out by the system, and emails whose sending failed. Also contains an archive of successfully sent emails. The application provides an interface for resending and deleting emails. Only works if the system is configured to use the email queue in Settings -&gt; System -&gt; Emails."><i aria-hidden="true" class="icon-app-email-queue cms-icon-80 cat-configuration app-administration-emailqueue"></i>Email queue</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e7c58bcc-a132-40cf-b587-c11fbf146963" data-appguid="e7c58bcc-a132-40cf-b587-c11fbf146963" data-original-title="The event log displays a list of errors and warnings that occurred within the system and keeps track of other events, such as object changes. You can view the log for the entire system or for individual sites. Check the event log if you encounter problems on your website."><i aria-hidden="true" class="icon-app-event-log cms-icon-80 cat-configuration app-administration-eventlog"></i>Event log</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#668ee99f-9ff1-4cbe-bc33-0cfd168b6dd1" data-appguid="668ee99f-9ff1-4cbe-bc33-0cfd168b6dd1" data-original-title="Allows you to integrate Kentico with 3rd party components or systems, for example CRMs. Register integration connectors and manage incoming and outgoing integration tasks."><i aria-hidden="true" class="icon-app-integration-bus cms-icon-80 cat-configuration app-administration-integrationbus"></i>Integration bus</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#69d69d2d-6d4e-40ef-9ce1-97d628083898" data-appguid="69d69d2d-6d4e-40ef-9ce1-97d628083898" data-original-title="Allows you to manage license keys for the websites in the system. You need a valid license for every domain that your sites use."><i aria-hidden="true" class="icon-app-licenses cms-icon-80 cat-configuration app-licenses"></i>Licenses</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#a51d2c12-2919-4946-ac7e-e632dce55b40" data-appguid="a51d2c12-2919-4946-ac7e-e632dce55b40" data-original-title="Allows you to manage the system's resource strings and cultures (languages). Resource strings store the text displayed within the administration interface, and provide a way to insert localization expressions with different values for each language. The application only manages resource strings stored in the database, the system's default strings are stored on the file system in resx files."><i aria-hidden="true" class="icon-app-localization cms-icon-80 cat-configuration app-development-cultures"></i>Localization</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#c2bed340-a9c6-4276-a5df-0fac607dfa0f" data-appguid="c2bed340-a9c6-4276-a5df-0fac607dfa0f" data-original-title="Allows you to create and manage memberships for users. Memberships grant users the permissions of one or more roles. For example, you can use memberships to allow users to access restricted sections of a website. Typically, memberships are associated with a product that users can purchase for a certain duration of time. Memberships can be global or site-specific."><i aria-hidden="true" class="icon-app-membership cms-icon-80 cat-configuration app-administration-membership"></i>Membership</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e324bfc1-88b8-4376-b471-2f38cd0400ee" data-appguid="e324bfc1-88b8-4376-b471-2f38cd0400ee" data-original-title="Allows you to edit your user profile. You can adjust your personal information, change your account's password, and manage subscriptions and notifications."><i aria-hidden="true" class="icon-app-my-profile cms-icon-80 cat-configuration app-myprofile"></i>My profile</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#c9d6cfe9-fabf-4c36-a386-af21ff6dae99" data-appguid="c9d6cfe9-fabf-4c36-a386-af21ff6dae99" data-original-title="Allows you to set permissions for user roles. Users need permissions to access applications and perform actions within the administration interface. Permissions are available for groups of functionality (modules), page types and custom table."><i aria-hidden="true" class="icon-app-permissions cms-icon-80 cat-configuration app-permissions"></i>Permissions</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#75378281-4fd7-4279-a124-16d591b30944" data-appguid="75378281-4fd7-4279-a124-16d591b30944" data-original-title="Allows you to prepare relationship types for pages and system objects. To create relationships between pages, open the Pages application and edit pages on the Properties -&gt; Related pages tab."><i aria-hidden="true" class="icon-app-relationship-names cms-icon-80 cat-configuration app-development-relationshipnames"></i>Relationship names</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#f0bd5a70-9d0f-4f27-b9a8-98c76818c73a" data-appguid="f0bd5a70-9d0f-4f27-b9a8-98c76818c73a" data-original-title="Allows you to create reports that monitor activity on websites or present any type of data within the system. The application provides tools for designing graphs and tables."><i aria-hidden="true" class="icon-app-marketing-reports cms-icon-80 cat-configuration app-reporting"></i>Reporting</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#d88037da-8491-49c5-bcf5-93fc5b63f83b" data-appguid="d88037da-8491-49c5-bcf5-93fc5b63f83b" data-original-title="Allows you to manage user roles. Roles determine which users can access information and perform actions, both on the pages of websites and within the administration interface. You can create new roles, assign roles to users, and define the authorization options that individual roles provide."><i aria-hidden="true" class="icon-app-roles cms-icon-80 cat-configuration app-administration-roles"></i>Roles</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e137fbb2-dc81-4b5f-921e-51e82851670b" data-appguid="e137fbb2-dc81-4b5f-921e-51e82851670b" data-original-title="Allows you to manage the system's scheduled tasks. The tasks perform a certain function at a specified time or regularly according to a set interval. You can configure the default tasks and register custom tasks prepared by developers. The application also provides a way to run tasks manually."><i aria-hidden="true" class="icon-app-scheduled-tasks cms-icon-80 cat-configuration app-scheduledtasks"></i>Scheduled tasks</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#14ffd692-f5df-4b72-b2f0-b0cd7f6c062f" data-appguid="14ffd692-f5df-4b72-b2f0-b0cd7f6c062f" data-original-title="Allows you to configure the system's data on search engines. Marketing applications use the data for monitoring website traffic sources. The default data includes the most common search engines, and you can add any other search engines related to your websites."><i aria-hidden="true" class="icon-app-search-engines cms-icon-80 cat-configuration app-development-searchenginenames"></i>Search engines</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#02cded6b-aa35-4a82-a5f3-e5a5fe82e58b" data-appguid="02cded6b-aa35-4a82-a5f3-e5a5fe82e58b" data-original-title="Allows you to configure settings for individual websites and the system as a whole. The settings are separated into categories according to the affected functionality."><i aria-hidden="true" class="icon-app-settings cms-icon-80 cat-configuration app-settings"></i>Settings</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#8ef407e4-ba55-4324-b75d-2cccd2cb4339" data-appguid="8ef407e4-ba55-4324-b75d-2cccd2cb4339" data-original-title="Allows you to define connections to SharePoint servers."><i aria-hidden="true" class="icon-brand-sharepoint cms-icon-80 cat-configuration app-sharepoint"></i>SharePoint connections</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#5576826f-328b-4b53-9f4b-e877fabd4d63" data-appguid="5576826f-328b-4b53-9f4b-e877fabd4d63" data-original-title="Allows you to manage the sites in the system. You can create or import sites, start and stop existing sites, set domain names, configure multilingual sites, and create export packages containing entire sites or specified objects."><i aria-hidden="true" class="icon-app-sites cms-icon-80 cat-configuration app-sites"></i>Sites</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#63e02a10-70a6-4431-99cd-31fe3f5dfa16" data-appguid="63e02a10-70a6-4431-99cd-31fe3f5dfa16" data-original-title="Allows you to create and manage search indexes for the content of websites and other data in the system. To create a search interface for the indexed content, add Smart search web parts onto your site's pages through the Pages application."><i aria-hidden="true" class="icon-app-smart-search cms-icon-80 cat-configuration app-administration-smartsearch"></i>Smart search</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#ef38f4c2-60bf-4315-8aa7-7af84e7367e4" data-appguid="ef38f4c2-60bf-4315-8aa7-7af84e7367e4" data-original-title="Allows you to register and manage additional SMTP servers that the system uses to deliver emails. You can make the SMTP servers available globally for all sites, or add dedicated servers for specific sites. To set the primary SMTP server, open the Settings application and select the System -&gt; Emails category."><i aria-hidden="true" class="icon-app-smtp-servers cms-icon-80 cat-configuration app-administration-smtpservers"></i>SMTP servers</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#fec737ad-c051-4617-bbae-bf83a9d37751" data-appguid="fec737ad-c051-4617-bbae-bf83a9d37751" data-original-title="Staging allows you to transfer changes made to pages (documents), custom table data, and system objects to other instances. The system generates synchronization tasks for changes, which you can manually synchronize.  You also need to use this application to set up the target servers for the staging."><i aria-hidden="true" class="icon-app-staging cms-icon-80 cat-configuration app-staging"></i>Staging</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#94fdc4a5-7425-4520-a3ae-ea5baf8c43a7" data-appguid="94fdc4a5-7425-4520-a3ae-ea5baf8c43a7" data-original-title="Provides a form that you can use to send an email to Kentico support staff if you encounter a problem when using the system."><i aria-hidden="true" class="icon-app-submit-support-issue cms-icon-80 cat-configuration app-submitissue"></i>Submit support issue</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#6e969eb5-cb85-45ac-89c9-2bdebef2c820" data-appguid="6e969eb5-cb85-45ac-89c9-2bdebef2c820" data-original-title="Displays information about the application and the environment where the system is running. Also allows you to perform system tasks, such as clearing the cache, restarting the application, deployment of virtual objects to the file system, separation of the on-line marketing database, searching for macro expressions and global management of macro signatures."><i aria-hidden="true" class="icon-app-system cms-icon-80 cat-configuration app-administration-system"></i>System</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#6e70e80b-052c-4e3b-b10c-57ff6b73d4b6" data-appguid="6e70e80b-052c-4e3b-b10c-57ff6b73d4b6" data-original-title="Provides a global widget dashboard that you can personalize to contain frequently used sources of information or tools. This dashboard is intended as an overall overview of the system for administrators."><i aria-hidden="true" class="icon-app-content-dashboard cms-icon-80 cat-configuration app-dashboard"></i>System overview</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#6465c1ee-5980-4f74-92ec-6229de763ff8" data-appguid="6465c1ee-5980-4f74-92ec-6229de763ff8" data-original-title="Allows you to manage the tag groups available on the site and view tags in specific tag groups. To tag pages, go to the Pages application and edit pages on the Properties -&gt; Metadata tab."><i aria-hidden="true" class="icon-app-tag-groups cms-icon-80 cat-configuration app-development-taggroups"></i>Tag groups</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#e57e7ac2-11f4-4d61-a1a1-12ce900d5169" data-appguid="e57e7ac2-11f4-4d61-a1a1-12ce900d5169" data-original-title="Allows you to configure the system's time zone data, including the GMT differences and daylight saving time rules.  To set the correct time zone for your server and websites, go to Settings -&gt; System."><i aria-hidden="true" class="icon-app-time-zones cms-icon-80 cat-configuration app-development-timezones"></i>Time zones</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#653efb5f-69e9-4471-a7d4-3465cf5939f4" data-appguid="653efb5f-69e9-4471-a7d4-3465cf5939f4" data-original-title="Allows you to manage the translation services registered in the system. The services provide a way to translate the content of websites externally, without direct editing in the administration interface. You can configure the default translation services, and add your own custom-developed services."><i aria-hidden="true" class="icon-app-translation-services cms-icon-80 cat-configuration app-development-translationservices"></i>Translation services</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#568594fa-8995-4479-afa8-eebb26d97d71" data-appguid="568594fa-8995-4479-afa8-eebb26d97d71" data-original-title="Allows you to choose which parts of the administration interface are visible for user roles. You can use UI personalization to simplify the interface for business users by hiding entire applications, tabs or parts of pages."><i aria-hidden="true" class="icon-app-ui-personalization cms-icon-80 cat-configuration app-uipersonalization"></i>UI personalization</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#51836837-1d6b-4087-a85c-9c09420d0e98" data-appguid="51836837-1d6b-4087-a85c-9c09420d0e98" data-original-title="Allows you to manage all users in the system.  You can manually create new users and edit the settings of existing user accounts. The application also provides several features, such as sending of mass emails, monitoring which users are currently online, and kicking users from sites."><i aria-hidden="true" class="icon-app-users cms-icon-80 cat-configuration app-administration-users"></i>Users</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#0ddc3a2f-9e91-44ed-a866-253061f53153" data-appguid="0ddc3a2f-9e91-44ed-a866-253061f53153" data-original-title="Allows you to define web farm servers. You can scale the performance of websites by distributing computing among multiple web servers, and use a web farm to synchronize the servers. The application also provides a list of all web farm synchronization tasks that are waiting to be processed."><i aria-hidden="true" class="icon-app-web-farm cms-icon-80 cat-configuration app-administration-webfarm"></i>Web farm</a></li>
+                        
+                    
+                        
+                        
+                            <li class="js-filter-item"><a title="" href="#393f4bd7-a005-4f1b-ab0c-eaace2509f57" data-appguid="393f4bd7-a005-4f1b-ab0c-eaace2509f57" data-original-title="Allows you to manage basic and advanced workflows. You can define the sequence of steps for each workflow, configure notifications or turn check-in/check-out on or off."><i aria-hidden="true" class="icon-app-workflows cms-icon-80 cat-configuration app-development-workflows"></i>Workflows</a></li>
+                        
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+                <p class="js-filter-empty padding-100" style="display: none;">No matching applications found.</p>
+            </div>
+        </div>
+        
+
+        
+        
+            <div class="btn-livesite-wrapper">
+                <a id="m_c_lnkLiveSite" title="Open live site in a new window" class="btn btn-default" href="/?viewmode=0" target="_blank">Live site</a>
+            </div>
+        
+    </div>
+    <div id="cms-overlayer" class="applist-overlayer" style="display: none;"></div>
+    <script type="text/javascript">
+        //<![CDATA[
+        function SetLiveSiteURL(liveSiteURL) {
+            if (!liveSiteURL) {
+                // Set default URL to root
+                liveSiteURL = '/?viewmode=0';
+            }
+
+            var element = document.getElementById('m_c_lnkLiveSite');
+            if (element != null) {
+                element.href = liveSiteURL;
+            }
+        }
+        //]]>
+    </script>
+    
+    
+<div id="modalWrap" style="display: none;">
+</div>
+    
+
+
+
+<div id="screenLockBackground" class="ui-widget-overlay screenlock-overlay" style="display: none;"></div>
+<div id="screenLockDialog" class="ModalPopupDialog screen-lock-dialog" style="display: none;">
+    <div id="m_c_screenLockDialogElem_pnlScreenLock">
+	
+        <div class="PageHeader">
+            <div id="m_c_screenLockDialogElem_screenLockTitle_pnlBody">
+		
+    <div id="m_c_screenLockDialogElem_screenLockTitle_pnlTitle" class="dialog-header non-selectable">
+			
+        <div class="dialog-header-action-buttons">
+            <div class="action-button">
+                <a id="m_c_screenLockDialogElem_screenLockTitle_helpElem_lnkHelp" class="hidden" target="_blank">
+        <span class="sr-only">Display help</span>
+        <i id="m_c_screenLockDialogElem_screenLockTitle_helpElem_iconHelp" aria-hidden="true" class="icon-question-circle cms-icon-80" title="Display help"></i></a>
+            </div>
+            
+            
+            
+        </div>
+        <h2 id="m_c_screenLockDialogElem_screenLockTitle_headTitle" class="dialog-header-title" style="white-space:nowrap;">
+				Screen lock
+			</h2>
+        
+    
+		</div>
+    
+
+	</div>
+        </div>
+        <div id="m_c_screenLockDialogElem_pnlScreenLockContent" class="dialog-content" style="width: 400px; height: 200px;">
+		
+            <span id="m_c_screenLockDialogElem_lblInstructions" class="form-info">Your screen was locked due to long period of inactivity. Please enter your password to unlock it again.</span>
+            <div class="screen-lock-dialog-form">
+
+                <div class="form-horizontal">
+                    <div class="form-group hide" id="tokenBox">
+                        <div class="editing-form-label-cell">
+                            <span id="m_c_screenLockDialogElem_lblTokenInfo" class="control-label"></span>
+                        </div>
+                        <div class="editing-form-value-cell">
+                            <span id="m_c_screenLockDialogElem_lblTokenID" class="form-control-text"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="usernameBox">
+                        <div class="editing-form-label-cell">
+                            <span id="m_c_screenLockDialogElem_lblUserName" class="control-label">User name:</span>
+                        </div>
+                        <div class="editing-form-value-cell">
+                            <input name="m$c$screenLockDialogElem$txtUserName" type="text" value="hugh-manager" maxlength="100" id="m_c_screenLockDialogElem_txtUserName" disabled="disabled" class="aspNetDisabled form-control input-width-60" style="">
+                             
+                            <input class="hide" style="">
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="passwordBox">
+                        <div class="editing-form-label-cell">
+                            <span id="m_c_screenLockDialogElem_lblPassword" class="control-label">Password:</span>
+                        </div>
+                        <div class="editing-form-value-cell">
+                            <input name="m$c$screenLockDialogElem$txtScreenLockDialogPassword" type="password" id="m_c_screenLockDialogElem_txtScreenLockDialogPassword" class="form-control input-width-60" onkeypress="return ScreenLockEnterHandler(event)" style="">
+                        </div>
+                    </div>
+
+                    <div class="form-group hide" id="passcodeBox">
+                        <div class="editing-form-label-cell">
+                            <span id="m_c_screenLockDialogElem_lblPasscode" class="control-label">Passcode:</span>
+                        </div>
+                        <div class="editing-form-value-cell">
+                            <input name="m$c$screenLockDialogElem$txtPasscode" type="text" maxlength="100" id="m_c_screenLockDialogElem_txtPasscode" class="form-control input-width-60" style="">
+                        </div>
+                    </div>
+                    <span id="m_c_screenLockDialogElem_lblScreenLockWarningLogonAttempts" class="form-control-error hide">Your login attempt was not successful. You were logged out from the system.</span>
+                    <span id="screenLockDialogWarning" class="Red hide">Wrong password.</span>
+                </div>
+            </div>
+        
+	</div>
+        <div class="dialog-footer">
+            <input type="button" class="btn btn-primary" id="screenLockSignInButton" value="Sign In" onclick="ScreenLockRedirectToLogon('/Admin/    '); return false;" style="display: none;">
+            <input type="button" class="btn btn-primary" id="screenLockUnlockButton" value="Unlock" onclick="ScreenLockValidateUser(); return false;" style="">
+            <button type="submit" name="m$c$screenLockDialogElem$btnScreenLockSignOut" value="Sign Out" onclick="ScreenLockLogoutUser(); return false;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;m$c$screenLockDialogElem$btnScreenLockSignOut&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="m_c_screenLockDialogElem_btnScreenLockSignOut" class="btn btn-primary">Sign Out</button>
+        </div>
+    
+</div>
+</div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("m_manScript_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+
+<script type="text/javascript">
+	//<![CDATA[
+if (typeof(Sys.Browser.WebKit) == 'undefined') {
+    Sys.Browser.WebKit = {};
+}
+if (navigator.userAgent.indexOf('WebKit/') > -1) {
+    Sys.Browser.agent = Sys.Browser.WebKit;
+    Sys.Browser.version = parseFloat(navigator.userAgent.match(/WebKit\/(\d+(\.\d+)?)/)[1]);
+    Sys.Browser.name = 'WebKit';
+}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/Mole'], function(module) { new module(); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/BreadcrumbsPin'], function(module) { new module({
+  "pinId": "js-single-object-dashboard-pin"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/Header'], function(module) { new module({
+  "selectorId": "m_c_layoutElem_h_Header_ss_ss_drpSingleSelect",
+  "dashboardLinkId": "m_c_layoutElem_h_Header_lnkDashboard"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var callBackFrameUrl='/WebResource.axd?d=MRA_K71CDDqpyYzsgkmQ72MejDgkLwlmj1J4VKdeZxyUzPElKnrSYnOdtJFGoN8ZQdfGJ4goPlZDiuP7FJUmEujZ2fs0Mq5xI0hp2cZ-Yjw1&t=638286425964787378';
+WebForm_InitCallback();//]]>
+</script>
+
+<script type="text/javascript">
+	//<![CDATA[
+
+function HideWarning(id, key) {
+    if(key) {
+        HideMessage(key);    
+    }
+    
+    if(!id) {
+        id = 'm_c_layoutElem_h_Header_pnlPwdExp';
+    }
+    
+    var panel = $cmsj('#' + id);
+    if(panel) {
+        panel.hide();
+        window.top.layouts[0].resizeAll(); 
+    }
+}
+
+function ReceiveMessage() {}
+
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+
+function CheckChanges() {
+    var innerFrame = parent.frames['cmsdesktop'];
+    if (innerFrame.CheckChanges && !innerFrame.CheckChanges())
+    {
+        return false; 
+    }
+    else
+    {
+        return true;
+    }
+}
+
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/Breadcrumbs'], function(module) { new module({
+  "moreBreadcrumbsText": "More breadcrumbs",
+  "splitViewModeText": "Compare"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/ContextHelp'], function(module) { new module({
+  "wrapperId": "m_c_layoutElem_h_Header_contextHelp",
+  "toolbarId": "m_c_layoutElem_h_Header_contextHelp_pnlToolbar",
+  "helpTopicsMenuItemId": "m_c_layoutElem_h_Header_contextHelp_helpTopics",
+  "searchMenuItemId": "m_c_layoutElem_h_Header_contextHelp_search",
+  "searchUrlPattern": "http://kentico.com/CMSPages/DocLinkMapper.ashx?version=9.0\u0026search={0}",
+  "descriptionMenuItemId": "m_c_layoutElem_h_Header_contextHelp_description"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/UserMenu'], function(module) { new module({
+  "wrapperSelector": ".cms-navbar.js-user-menu-wrapper",
+  "checkChangesLinksSelector": ".js-check-changes"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+document.pageLoaded = true;
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+
+cmsrequire(['CMS/EventHub', 'CMS/Application'], function (hub, app) {
+    hub.publish('PageLoaded', app.getData(null, window));
+});
+
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/AppList'], function(module) { new module({
+  "applicationListBaseUrl": "/CMSModules/AdminControls/Pages/UIPage.aspx",
+  "defaultAppUrl": "/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx",
+  "defaultAppName": "Dashboard",
+  "indentLiveSite": true,
+  "launchAppWithQuery": "",
+  "screenLockInterval": 1080
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/GlobalEventsHandler'], function(module) { new module(); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/BootstrapTooltip'], function(module) { new module({
+  "selector": ".js-filter-item a",
+  "templateSelector": "\u003cdiv class=\u0022tooltip applist-tooltip\u0022\u003e\u003cdiv class=\u0022tooltip-arrow\u0022\u003e\u003c/div\u003e\u003cdiv class=\u0022tooltip-inner\u0022\u003e\u003c/div\u003e\u003c/div\u003e"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+US_InitDropDown(document.getElementById('m_c_layoutElem_h_Header_ss_ss_drpSingleSelect'))
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/Loader'], function(module) { new module({
+  "overlayHtml": "\u003cdiv id=\u0022cms-overlayer\u0022 class=\u0022overlayer overlayer-general\u0022\u003e\u003c/div\u003e",
+  "loaderHtml": "\u003cdiv id=\u0022cms-loader\u0022 class=\u0022loader loader-general\u0022\u003e\u003ci aria-hidden=\u0022true\u0022 class=\u0022icon-spinner spinning cms-icon-100 loader-icon\u0022\u003e\u003c/i\u003e\u003cspan class=\u0022loader-text\u0022\u003eLoading\u003c/span\u003e\u003c/div\u003e"
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/AdvancedPopupHandler'], function(module) { new module(); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function serverRequest(args, context){{ WebForm_DoCallback('m$c$screenLockDialogElem',args,getResultShort,"",null,false); }}var screenLockEnabled = true;$cmsj('#screenLockWarningDialog').appendTo($cmsj('#cms-header-messages'));
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+$cmsj(window).load(function(){
+var topFrame = GetTop();
+if(window.wopener)
+{
+    if((top.isTitleWindow) && top.isTitleWindow(topFrame, window))
+    {
+        addHandle(document.getElementById('m_c_screenLockDialogElem_screenLockTitle_pnlTitle'), window);
+    }
+}
+});
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/DialogContextHelp'], function(module) { new module({
+  "helpName": "helpElem",
+  "helpLinkId": "m_c_screenLockDialogElem_screenLockTitle_helpElem_lnkHelp",
+  "helpHidden": true
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/BootstrapTooltip'], function(module) { new module({
+  "selector": ".macro-length-warning i",
+  "templateSelector": null
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/BootstrapTooltip'], function(module) { new module({
+  "selector": ".macro-length-warning i",
+  "templateSelector": null
+}); });
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+cmsrequire(['CMS/BootstrapTooltip'], function(module) { new module({
+  "selector": ".macro-length-warning i",
+  "templateSelector": null
+}); });
+//]]>
+</script></form>
+    
+    
+<script type="text/javascript">
+	//<![CDATA[
+var layout_m_c_layoutElem;
+layout_m_c_layoutElem = $cmsj('body').layout({
+defaults:{
+enableCursorHotkey:false
+}
+,north: {
+paneSelector: '#m_c_layoutElem_h'
+,resizable: false
+,spacing_open: 0
+,spacing_closed: 0
+,paneClass: "main-header"
+,resizerTip: "Resize"
+,sliderTip: "Slide"
+,initClosed: false
+}
+,center: {
+paneSelector: '#m_c_layoutElem_cmsdesktop'
+,onclose_start: $cmsj.layout.callbacks.pseudoClose
+,resizerTip: "Resize"
+,sliderTip: "Slide"
+,initClosed: false
+}
+});
+if (window.layouts == undefined) {
+layouts = new Array();
+}
+layouts[layouts.length] = layout_m_c_layoutElem;
+
+//]]>
+</script><div id="m_c_layoutElem_h-resizer" class="ui-layout-resizer ui-layout-resizer-north ui-layout-resizer-open ui-layout-resizer-north-open" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; top: 48px; cursor: default; display: none;"><div id="m_c_layoutElem_h-toggler" class="ui-layout-toggler ui-layout-toggler-north ui-layout-toggler-open ui-layout-toggler-north-open" title="Close" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible;"></div></div>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;0e3d70bca44b4a6b8a3decb35572f809&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>
