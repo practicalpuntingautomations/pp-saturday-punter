@@ -1,0 +1,114 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  PROJECT_ID: pp-saturday-punter
+  REGION: australia-southeast1
+  REPO_NAME: saturday-app
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 1. Run Tests
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pandas google-cloud-storage google-auth
+          # Add other minimal deps needed for unit tests if not in requirements.txt (or use requirements)
+          # We'll rely on minimal install for speed, or requirements if we trust it
+      
+      - name: Run Unit Tests
+        run: |
+          # Create dummy execution/__init__.py for test imports
+          touch execution/__init__.py
+          python -m pytest tests/
+
+      # 2. Authenticate to Google Cloud
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+
+      - name: 'Configure Docker'
+        run: |
+          gcloud auth configure-docker
+
+      # 3. Build & Push
+      - name: 'Build and Push Container'
+        run: |
+          gcloud builds submit --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA .
+
+      # 4. Deploy Trading Desk
+      - name: 'Deploy Trading Desk'
+        uses: 'google-github-actions/deploy-cloudrun@v1'
+        with:
+          service: 'trading-desk'
+          image: 'gcr.io/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}:${{ github.sha }}'
+          region: '${{ env.REGION }}'
+          env_vars: |
+            GCS_BUCKET_NAME=pp-saturday-punter-assets-2026
+            WEB_UPLOAD_USER=hugh-manager
+            SYSTEM_BUILDER_USER=Hugh
+            DASHBOARD_URL=https://trading-desk-743327487816.australia-southeast1.run.app
+            # Note: We need to inject the token too? 
+            # The token.json logic in manual_deploy.ps1 encodes it. 
+            # For CI/CD, we should store the BASE64 token in GitHub Secrets too: GOOGLE_TOKEN_B64
+          secrets: |
+            APP_PASSWORD=app-password:latest
+            WEB_UPLOAD_PASSWORD=web-upload-password:latest
+            SYSTEM_BUILDER_PASSWORD=system-builder-password:latest
+            NOTIFICATION_EMAIL_PASSWORD=notification-email-password:latest
+          flags: '--allow-unauthenticated --memory=2Gi'
+
+      # 5. Deploy HQ Command
+      - name: 'Deploy HQ Command'
+        uses: 'google-github-actions/deploy-cloudrun@v1'
+        with:
+          service: 'hq-command'
+          image: 'gcr.io/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}:${{ github.sha }}'
+          region: '${{ env.REGION }}'
+          env_vars: |
+            GCS_BUCKET_NAME=pp-saturday-punter-assets-2026
+            WEB_UPLOAD_USER=hugh-manager
+            SYSTEM_BUILDER_USER=Hugh
+            DASHBOARD_URL=https://trading-desk-743327487816.australia-southeast1.run.app
+          secrets: |
+            APP_PASSWORD=app-password:latest
+            WEB_UPLOAD_PASSWORD=web-upload-password:latest
+            SYSTEM_BUILDER_PASSWORD=system-builder-password:latest
+            NOTIFICATION_EMAIL_PASSWORD=notification-email-password:latest
+          flags: '--allow-unauthenticated --memory=2Gi --command=python --args=-m,streamlit,run,execution/admin_dashboard.py,--server.port=8080,--server.address=0.0.0.0'
+
+      # 6. Deploy Scout Job (Update definition)
+      - name: 'Deploy Scout Job'
+        run: |
+          gcloud run jobs update scout-job \
+            --image gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA \
+            --region $REGION \
+            --set-env-vars GCS_BUCKET_NAME=pp-saturday-punter-assets-2026 \
+            --set-env-vars WEB_UPLOAD_USER=hugh-manager \
+            --set-env-vars SYSTEM_BUILDER_USER=Hugh \
+            --set-env-vars DASHBOARD_URL=https://trading-desk-743327487816.australia-southeast1.run.app \
+            --set-secrets APP_PASSWORD=app-password:latest,WEB_UPLOAD_PASSWORD=web-upload-password:latest,SYSTEM_BUILDER_PASSWORD=system-builder-password:latest,NOTIFICATION_EMAIL_PASSWORD=notification-email-password:latest
