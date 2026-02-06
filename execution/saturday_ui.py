@@ -356,8 +356,22 @@ def main():
                     if test_cfg.get("enable_date_override"):
                         ov_date_str = test_cfg.get("override_date")
                         if ov_date_str:
-                             next_saturday = datetime.strptime(ov_date_str, "%Y-%m-%d")
-                             st.toast(f"🧪 Test Mode: Date Overridden to {next_saturday.strftime('%d %b %Y')}", icon="🧪")
+                             try:
+                                 # Try Standard Format (YYYY-MM-DD)
+                                 next_saturday = datetime.strptime(ov_date_str, "%Y-%m-%d")
+                             except ValueError:
+                                 try:
+                                     # Try User Format (YYYY/MM/DD)
+                                     next_saturday = datetime.strptime(ov_date_str, "%Y/%m/%d")
+                                 except ValueError:
+                                      st.error(f"❌ Date Override Invalid Format: {ov_date_str}. Please use YYYY-MM-DD in Admin Settings.")
+                                      # Use default fallback logic if fail, but warn user
+                                      # Proceeding with calculated next_saturday
+                                      pass
+                                 
+                             # Only update if successful
+                             if next_saturday:
+                                  st.toast(f"🧪 Test Mode: Date Overridden to {next_saturday.strftime('%d %b %Y')}", icon="🧪")
         except Exception as e:
             print(f"Config Error: {e}")
         # ---------------------------
